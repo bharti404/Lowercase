@@ -1,37 +1,44 @@
-import React from 'react'
-import './Homepage.css'
-import homevideo from '../assests/home-video.mp4'
-
-
+import React, { useState } from 'react';
+import './Homepage.css';
+import homevideo from '../assests/home-video.mp4';
 
 const Homepage = () => {
+    const [activePage, setActivePage] = useState('home'); // Default to 'home' where the video plays
 
-
-
+    const handleNavbarClick = (page) => {
+        setActivePage(page); // Set the clicked navbar item as the active page
+    };
 
     return (
-        <div>
-            <div className="homepage-container">
-                <video className="background-video" src={homevideo} autoPlay loop muted></video>
-                <div className="navbar">
-                    <div className="navbar-logo">
-                        <div className='hi' >
-
-                            LOWER CASE EVENTS
-                        </div>
-                    </div>
-                    <div className="navbar-bar">
-
-                        <p className='navbar-items'>ABOUT</p>
-                        <p className='navbar-items'>ARTIST</p>
-                        <p className='navbar-items'>COLLABORATIONS</p>
-                        <p className='navbar-items'>EVENTS</p>
-                        <p className='navbar-items'>GALLERY</p>
+        <div className="homepage-container">
+            <div className="navbar">
+                <div className="navbar-logo">
+                    <div className='navbar-logo-border'>
+                        LOWER CASE EVENTS
                     </div>
                 </div>
+                <div className="navbar-bar">
+                    <p className='navbar-items' onClick={() => handleNavbarClick('about')}>ABOUT</p>
+                    <p className='navbar-items' onClick={() => handleNavbarClick('artist')}>ARTIST</p>
+                    <p className='navbar-items' onClick={() => handleNavbarClick('collaborations')}>COLLABORATIONS</p>
+                    <p className='navbar-items' onClick={() => handleNavbarClick('events')}>EVENTS</p>
+                    <p className='navbar-items' onClick={() => handleNavbarClick('gallery')}>GALLERY</p>
+                </div>
+            </div>
+
+            <div className="belownavbar">
+                {activePage === 'home' && (
+                    <video className="background-video" src={homevideo} autoPlay loop muted></video>
+                )}
+
+                {activePage === 'about' && <div className="content">About Us Content</div>}
+                {activePage === 'artist' && <div className="content">Artist Information</div>}
+                {activePage === 'collaborations' && <div className="content">Collaborations Info</div>}
+                {activePage === 'events' && <div className="content">Upcoming Events</div>}
+                {activePage === 'gallery' && <div className="content">Gallery Images</div>}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Homepage
+export default Homepage;
