@@ -3,10 +3,10 @@ import './Homepage.css';
 import homevideo from '../assests/home-video.mp4';
 
 const Homepage = () => {
-    const [activePage, setActivePage] = useState('home'); // Default to 'home' where the video plays
+    const [activePage, setActivePage] = useState('home'); 
 
     const handleNavbarClick = (page) => {
-        setActivePage(page); // Set the clicked navbar item as the active page
+        setActivePage(page); 
     };
 
     return (
