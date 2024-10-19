@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Homepage.css';
-import homevideo from '../assests/home-video.mp4';
 
 const Homepage = () => {
     const [activePage, setActivePage] = useState('home'); 
@@ -28,7 +27,7 @@ const Homepage = () => {
 
             <div className="belownavbar">
                 {activePage === 'home' && (
-                    <video className="background-video" src={homevideo} autoPlay loop muted></video>
+                    <video className="background-video" src={'https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4'} autoPlay loop muted></video>
                 )}
 
                 {activePage === 'about' && <div className="content">About Us Content</div>}
