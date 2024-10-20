@@ -57,3 +57,16 @@
     height: 100%;
 }  
 
+
+
+@media screen and (min-width: 2400px) {
+
+
+    .gallery-heading{
+        
+        margin: 250px auto 20px auto;
+        
+    }
+    
+   
+  }

@@ -13,10 +13,12 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-bar">
                     <Link  to='/about' className='navbar-items' >ABOUT</Link>
-                    <Link  to='/artist' className='navbar-items'>ARTIST</Link>
-                    <Link  to='/collab' className='navbar-items'>COLLABORATIONS</Link>
                     <Link  to='/events' className='navbar-items'>EVENTS</Link>
                     <Link  to='/photos' className='navbar-items'>PHOTOS</Link>
+                    <Link  to='/artist' className='navbar-items'>ARTIST</Link>
+                    <Link  to='/collab' className='navbar-items'>COLLABORATIONS</Link>
+                    <Link  to='/' className='navbar-items'>CONTACT US</Link>
+
 
                  
                 </div>
