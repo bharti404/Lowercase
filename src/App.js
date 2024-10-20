@@ -3,6 +3,7 @@ import Artist from "./components/artist/Artist";
 import Collaborations from "./components/collaborations/Collaborations";
 import Homepage from "./components/homepage/Homepage";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Photos from "./components/photos/Photos";
 
 
 
@@ -17,6 +18,8 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/artist" element={<Artist />} />
       <Route path="/collab" element={<Collaborations />} />
+      <Route path="/photos" element={<Photos />} />
+
 
 
 

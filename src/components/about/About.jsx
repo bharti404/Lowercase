@@ -79,7 +79,7 @@ const About = () => {
                     </div>
                     <div className="box_about">
                         <img src={gallery} alt="gallery" />
-                        <div className="overlay">GALLERY</div>
+                        <div className="overlay">PHOTOS</div>
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@ const About = () => {
 
                 <div className="slider_about">
 
-                    <div className="slider_about_title">Recent Collaborations</div>
+                    <div className="slider_about_title">RECENT COLLABORATIONS</div>
 
                     <div className="carousel">
                         <button onClick={prevImage} className="prev_button"><GrPrevious /></button>

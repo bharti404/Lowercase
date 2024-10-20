@@ -37,6 +37,7 @@ const Artist = () => {
     <div>
       <Navbar />
       <div className="artist_container">
+        <p className="artistpage_heading">ARTISTS</p>
        
         <div className="artist_gallery">
           {artists.map((artist, index) => (

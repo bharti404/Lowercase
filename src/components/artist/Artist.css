@@ -12,6 +12,15 @@
     flex-direction: column;
     /* border: 2px solid red; */
 }
+.artistpage_heading{
+
+    font-family: "Roboto", sans-serif;
+    font-size: 80px;
+    font-weight: 800;
+    color: #fff;
+    margin: 150px 00 50px 00;
+    text-align: center;
+}
 
 
 .artist_gallery {
