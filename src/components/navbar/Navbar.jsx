@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-
+import LowercaseeventsLogo from '../assests/LowercaseLogo.png'
 
 const Navbar = () => {
   return (
     <div className="navbar">
                 <div className="navbar-logo">
-                    <div className='navbar-logo-border'>
-                        LOWER CASE EVENTS
-                    </div>
+                    <img src={LowercaseeventsLogo} alt="" />
+                  
                 </div>
                 <div className="navbar-bar">
                     <Link  to='/about' className='navbar-items' >ABOUT</Link>

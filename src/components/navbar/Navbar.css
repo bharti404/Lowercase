@@ -13,19 +13,14 @@
 }
 
 .navbar-logo {
-    font-size: 22px;
-    color: #fff;
-    border: 2px solid #fff;
+
     cursor: pointer;
     margin-left: 30px;
     
 }
 
-.navbar-logo-border {
-    padding: 0.5rem 1rem;
-    border: 3px solid white;
-    text-transform: uppercase;
-    
+.navbar-logo img{
+    width: 10vw;
 }
 
 .navbar-bar {

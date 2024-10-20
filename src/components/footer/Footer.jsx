@@ -5,12 +5,14 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import "./Footer.css";
 
+import LowercaseEventsLogo from '../assests/LowercaseLogoRect.png'
 const Footer = () => {
   return (
     <div>
       <div className="lisenced">
         <div className="lisenced-logo">
-          <div className="logo-border">Lower Case Events</div>
+            <img src={LowercaseEventsLogo} alt="" />
+
         </div>
         <div className="lisenced-note">
           COPYRIGHT © 2024 Lower Case Events | Lower Case Events ltd. ALL RIGHTS

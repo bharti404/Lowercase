@@ -10,15 +10,17 @@
 
 .lisenced-logo{
     width: 20%;
-    height: 10vh;
-    /* border: 3px solid #fff; */
-    color: #fff;
-    text-align: center;
-    align-content: center;
-    font-size: 22px;
-    padding: 3px;
-    
+    /* border: 1px solid white; */
+
 }
+
+.lisenced-logo img{
+    width: 80%;
+    /* border: 1px solid teal; */
+
+
+}
+
 .lisenced-note{
     width: 70%;
     height: 10vh;
@@ -27,13 +29,6 @@
     text-align: center;
     align-content: center;
     padding-left: 450px;
-}
-.logo-border{
-    border: 4px solid #fff;
-    width: 70%;
-    height: 8vh;
-    align-content: center;
-    
 }
 
 
