@@ -69,7 +69,19 @@
 .footer-box1 ul li{
     margin-top: 15px;
     font-weight: 500;
+
 }
+
+.footer-box1 ul li a{
+
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+
+    text-decoration: none;
+    color: #fff;
+}
+
 .footer-box2{
     width: 25%;
     height: 100%;

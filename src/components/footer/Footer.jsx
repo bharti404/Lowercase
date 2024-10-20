@@ -5,14 +5,16 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import "./Footer.css";
 
-import LowercaseEventsLogo from '../assests/LowercaseLogoRect.png'
+import LowercaseEventsLogo from "../assests/LowercaseLogoRect.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
       <div className="lisenced">
         <div className="lisenced-logo">
-            <img src={LowercaseEventsLogo} alt="" />
-
+            <Link to='/'> 
+          <img src={LowercaseEventsLogo} alt="" />
+            </Link>
         </div>
         <div className="lisenced-note">
           COPYRIGHT © 2024 Lower Case Events | Lower Case Events ltd. ALL RIGHTS
@@ -24,11 +26,25 @@ const Footer = () => {
         <div className="footer-box1">
           <p className="footer-heading">LOWER CASE EVENTS</p>
           <ul>
-            <li>About</li>
-            <li>Artist</li>
-            <li>Collaborations</li>
-            <li>Events</li>
-            <li>Gallery</li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+
+            <li>
+              <Link to="/artist">Artist</Link>
+            </li>
+
+            <li>
+              <Link to="/collab">Collaborations</Link>
+            </li>
+
+            <li>
+              <Link to="/events">Events</Link>
+            </li>
+
+            <li>
+              <Link to="/photos">Photos</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-box2">
