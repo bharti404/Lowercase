@@ -11,6 +11,7 @@ import italy from "../assests/italy.jpeg";
 import vegas from "../assests/vegas.jpg";
 import chicago from "../assests/chicago.jpg";
 import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 
 const Collaborations = () => {
   return (
@@ -168,6 +169,7 @@ const Collaborations = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

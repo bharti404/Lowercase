@@ -1,7 +1,7 @@
 import React from "react";
 import "./Homepage.css";
 import Navbar from "../navbar/Navbar";
-// import Footer from "../footer/Footer";
+import Footer from "../footer/Footer";
 
 const Homepage = () => {
   return (
@@ -19,7 +19,7 @@ const Homepage = () => {
           muted
         ></video>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

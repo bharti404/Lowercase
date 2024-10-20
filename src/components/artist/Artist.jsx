@@ -5,6 +5,7 @@ import band from '../assests/band.jpeg';
 import travis from '../assests/Travis.jpg';
 import rocky from '../assests/rocky.jpg';
 import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 const artists = [
   { name: 'Banner', img: banner },
@@ -48,6 +49,7 @@ const Artist = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -11,6 +11,7 @@ import vegas from '../assests/vegas.jpg';
 import chicago from '../assests/chicago.jpg';
 import './Photos.css'
 import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 const Photos = () => {
     return (
@@ -74,6 +75,8 @@ const Photos = () => {
             <div className="gallery-banner-end">
                 <video src={video2} loop autoPlay muted />
             </div>
+
+            <Footer />
         </div>
     )
 }

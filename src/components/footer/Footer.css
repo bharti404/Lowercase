@@ -1,0 +1,117 @@
+
+.lisenced{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    /* border: 2px solid white; */
+    margin-top: 200px;
+    justify-content: space-around;
+}
+
+.lisenced-logo{
+    width: 20%;
+    height: 10vh;
+    /* border: 3px solid #fff; */
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    font-size: 22px;
+    padding: 3px;
+    
+}
+.lisenced-note{
+    width: 70%;
+    height: 10vh;
+    /* border: 2px solid blue; */
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    padding-left: 450px;
+}
+.logo-border{
+    border: 4px solid #fff;
+    width: 70%;
+    height: 8vh;
+    align-content: center;
+    
+}
+
+
+.footer{
+    width: 100%;
+    height: 50vh;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    /* padding: 30px; */
+    margin-top: 150px;
+}
+.footer-heading{
+    width: 100%;
+    height: 20%;
+    /* border: 2px solid white; */
+    align-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.footer-box1{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid yellow; */
+    justify-content: space-between;
+}
+.footer-box1 ul{
+    list-style: none;
+    height: 80%;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.footer-box1 ul li{
+    margin-top: 15px;
+    font-weight: 500;
+}
+.footer-box2{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid blue; */
+    justify-content: space-evenly;
+}
+.footer-box2 ul{
+    list-style: none;
+    height: 80%;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.footer-box2 ul li{
+    margin-top: 15px;
+    font-weight: 500;
+}
+.footer-box3{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+.social-icons{
+    width: 100%;
+    height: 10vh;
+    /* border: 2px solid red; */
+    display: flex;
+   
+   
+    
+    
+}
+.footer-icons{
+    font-size: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
