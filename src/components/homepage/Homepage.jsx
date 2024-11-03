@@ -3,7 +3,11 @@ import "./Homepage.css";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import LowerCaseLogo from "../assests/LowercaseLogoRect.png";
-import Brandslogocarousel from "../brands/Brandslogocarousel";
+import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
+import Artists from "./Artists";
+
+import FatosmaImg from '../assests/fatsoma_home.jpg'
+import Contact from "./Contact";
 
 const Homepage = () => {
   return (
@@ -48,6 +52,17 @@ const Homepage = () => {
       </div>
 
       <Brandslogocarousel />
+
+      <Artists />
+
+
+
+      <div className="home_fatsoma">
+
+        <img src={FatosmaImg} alt="" />
+      </div>
+
+      <Contact />
 
       <Footer />
     </div>
