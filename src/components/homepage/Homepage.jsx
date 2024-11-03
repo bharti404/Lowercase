@@ -3,6 +3,7 @@ import "./Homepage.css";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import LowerCaseLogo from "../assests/LowercaseLogoRect.png";
+import Brandslogocarousel from "../brands/Brandslogocarousel";
 
 const Homepage = () => {
   return (
@@ -45,6 +46,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+
+      <Brandslogocarousel />
 
       <Footer />
     </div>
