@@ -1,124 +1,152 @@
+/* .footer_main_parent {
+  border: 2px solid red;
+} */
 
-.lisenced{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    /* border: 2px solid white; */
-    margin-top: 200px;
-    justify-content: space-around;
+.lisenced {
+  display: flex;
+  /* border: 2px solid white; */
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
 }
 
-.lisenced-logo{
-    width: 20%;
-    /* border: 1px solid white; */
+.lisenced-logo {
+  width: 20%;
+  /* border: 1px solid white; */
+}
+
+.lisenced-logo img {
+  width: 80%;
+  /* border: 1px solid teal; */
+}
+
+.lisenced-note {
+  width: 70%;
+  color: #fff;
+  /* border: 2px solid blue; */
+  text-align: right;
+}
+
+.footer {
+  width: 90%;
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  margin: 100px auto;
+}
+.footer-heading {
+  font-size: 18px;
+  font-weight: 900;
+  /* border: 2px solid white; */
+}
+
+.footer-box1 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-box1 ul, .footer-box4 ul {
+  list-style: none;
+}
+.footer-box1 ul li , .footer-box4 ul li {
+  margin-top: 15px;
+}
+
+.footer-box1 ul li a , .footer-box4 ul li a, .footer-box2 ul li a  {
+  text-decoration: none;
+  color: #fff;
+  /* border: 2px solid red; */
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.footer-box2 {
+  width: 20%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid blue; */
+
+}
+.footer-box2 ul {
+  list-style: none;
+  font-size: 14px;
+}
+.footer-box2 ul li {
+  margin-top: 15px;
+}
+.footer-box3 {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+}
+.social-icons {
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  margin: 10px 00;
+  justify-content: space-between;
+}
+.footer-icons {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
+.footer-box3 img{
+
+    width: 12%;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin: 00 10px;
 
 }
 
-.lisenced-logo img{
-    width: 80%;
-    /* border: 1px solid teal; */
 
-
-}
-
-.lisenced-note{
-    width: 70%;
-    height: 10vh;
-    /* border: 2px solid blue; */
-    color: #fff;
-    text-align: center;
-    align-content: center;
-    padding-left: 450px;
-}
-
-
-.footer{
-    width: 100%;
-    height: 50vh;
-    /* border: 2px solid white; */
-    display: flex;
-    justify-content: space-around;
-    color: #fff;
-    /* padding: 30px; */
-    margin-top: 150px;
-}
-.footer-heading{
-    width: 100%;
-    height: 20%;
-    /* border: 2px solid white; */
-    align-content: center;
-    font-size: 16px;
-    font-weight: 900;
-    margin-left: 10px;
-}
-
-.footer-box1{
+.footer-box4{
     width: 25%;
-    height: 100%;
+    /* border: 1px solid yellow; */
+}
+
+
+.bottom_footer{
+
+
+    background-color: #000;
+    color: #fff;
+
+}
+
+
+.bottom_footer ul li{
+
+
+
     display: flex;
-    flex-direction: column;
-    /* border: 2px solid yellow; */
+    align-items: center;
     justify-content: space-between;
-}
-.footer-box1 ul{
+    width: 40%;
+    margin: 10px auto;
     list-style: none;
-    height: 80%;
-    font-size: 14px;
-    margin-left: 10px;
-}
-.footer-box1 ul li{
-    margin-top: 15px;
-    font-weight: 500;
 
 }
 
-.footer-box1 ul li a{
+.bottom_footer ul li a{
 
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
 
-    text-decoration: none;
     color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    
+
 }
 
-.footer-box2{
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* border: 2px solid blue; */
-    justify-content: space-evenly;
-}
-.footer-box2 ul{
-    list-style: none;
-    height: 80%;
-    font-size: 14px;
-    margin-left: 10px;
-}
-.footer-box2 ul li{
-    margin-top: 15px;
-    font-weight: 500;
-}
-.footer-box3{
-    width: 25%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* border: 2px solid red; */
-}
-.social-icons{
-    width: 100%;
-    height: 10vh;
-    /* border: 2px solid red; */
-    display: flex;
-   
-   
-    
-    
-}
-.footer-icons{
-    font-size: 40px;
-    margin-left: 10px;
-    cursor: pointer;
+
+
+
+.footer_main_parent  a:hover {
+  color: #850101;
 }
