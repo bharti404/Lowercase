@@ -9,3 +9,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Apply black background to widget wrapper */
+.js-widget-wrapper {
+  background-color: #000 !important;
+  padding: 0 !important;
+  border-radius: 10px;
+}

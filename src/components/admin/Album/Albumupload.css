@@ -1,0 +1,40 @@
+/* AlbumUpload.css */
+.album-upload {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .album-upload h2 {
+    text-align: center;
+  }
+  
+  .album-upload label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .album-upload input[type="text"],
+  .album-upload input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .dropzone {
+    margin: 10px 0;
+    padding: 20px;
+    border: 2px dashed #007bff;
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .dropzone p {
+    margin: 0;
+  }
+  

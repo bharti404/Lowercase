@@ -8,6 +8,7 @@ import Artists from "./Artists";
 
 import FatosmaImg from '../assests/fatsoma_home.jpg'
 import Contact from "./Contact";
+import InstagramEmbed from "../Insta/Insta";
 
 const Homepage = () => {
   return (
@@ -61,6 +62,9 @@ const Homepage = () => {
 
         <img src={FatosmaImg} alt="" />
       </div>
+
+
+      <InstagramEmbed />
 
       <Contact />
 

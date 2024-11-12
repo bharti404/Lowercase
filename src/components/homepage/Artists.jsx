@@ -38,20 +38,23 @@ const Artists = () => {
   };
   return (
     <div className="home_artists_section">
-      <p className="home_artists_section_heading">ARTIST_</p>
-
       <div className="home_artist_name_items">
-        <div className="home_artist_name_items_left">
-          <p className="home_artist_name_item">A BOOGIE WITH A HOODIE</p>
-          <p className="home_artist_name_item">LIL TJAY</p>
-          <p className="home_artist_name_item">DRAKE</p>
-          <p className="home_artist_name_item">GUNNA</p>
-          <p className="home_artist_name_item">BRYSON TILLER</p>
-        </div>
+          <p className="home_artists_section_heading">ARTISTS_</p>
 
+     
         <div className="home_artist_name_items_right">
           <button className="home_artists_view_morebtn">VIEW MORE++</button>
         </div>
+      </div>
+
+      <div className="artist_name-slider">
+        <Slider {...settings}>
+          {ArtistNames.map((artist, index) => (
+            <div key={index} className="slider-item">
+              <p className="artist_name_home_scroll">{artist}</p>
+            </div>
+          ))}
+        </Slider>
       </div>
 
       <div className="home_artists_callage_items">
@@ -76,15 +79,7 @@ const Artists = () => {
         </div>
       </div>
 
-      <div className="artist_name-slider">
-        <Slider {...settings}>
-          {ArtistNames.map((artist, index) => (
-            <div key={index} className="slider-item">
-              <p className="artist_name_home_scroll">{artist}</p>
-            </div>
-          ))}
-        </Slider>
-      </div>
+
     </div>
   );
 };
