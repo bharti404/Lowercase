@@ -1,0 +1,38 @@
+
+
+
+
+.card_album_section{
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 00 00 100px 00;
+
+}
+
+
+.curvedcard_cutsom{
+
+
+    /* Apply your box-shadow styles, which inherit the round .wrapper shape */
+    box-shadow: 0px 10px 30px #444444 !important;
+    /* border: 1px solid red; */
+
+}
+
+
+.curvedcard_cutsom:hover{
+
+
+    box-shadow: 0px 10px 100px #444444 !important;
+
+
+}
+
+
+.card_album_section strong{
+
+    margin: 00  5px 00 00;
+}

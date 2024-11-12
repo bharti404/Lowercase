@@ -1,20 +1,37 @@
 /* AlbumUpload.css */
 .album-upload {
-    max-width: 500px;
+   width: 50%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
   }
+
+  .abumupaod_head{
+
+    margin: 10px auto 50px auto;
+  }
   
   .album-upload h2 {
     text-align: center;
   }
   
+  .album_form_two_items{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .album-upload label {
     display: block;
-    margin-top: 10px;
+
+  }
+
+  .album_form_two_items label{
+
+
+    width: 45%;
   }
   
   .album-upload input[type="text"],
@@ -38,3 +55,25 @@
     margin: 0;
   }
   
+  
+
+  .upload_albumbtn{
+
+    padding: 10px;
+    margin: 10px 00;
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+
+  }
+
+
+  .upload_albumbtn:hover{
+
+cursor: pointer;
+    background-color: #3994f5;
+
+
+  }

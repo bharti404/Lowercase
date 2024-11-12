@@ -9,8 +9,13 @@ import Artists from "./Artists";
 import FatosmaImg from '../assests/fatsoma_home.jpg'
 import Contact from "./Contact";
 import InstagramEmbed from "../Insta/Insta";
+import Modernphotos from "../photos/Modernphotos";
+import Instagidphotos from "../photos/Instagidphotos";
 
 const Homepage = () => {
+
+  
+
   return (
     <div className="homepage-container">
       <Navbar />
@@ -53,6 +58,8 @@ const Homepage = () => {
       </div>
 
       <Brandslogocarousel />
+      <Modernphotos />
+      <Instagidphotos />
 
       <Artists />
 

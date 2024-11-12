@@ -70,63 +70,69 @@ const AlbumUpload = () => {
 
   return (
     <div className="album-upload">
-      <h2>Upload Album</h2>
+      <h2 className="abumupaod_head">Upload Album</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Album Title:
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </label>
+        <div className="album_form_two_items">
+          <label>
+            Album Title:
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </label>
 
-        <label>
-          Club Name:
-          <input
-            type="text"
-            value={club}
-            onChange={(e) => setClub(e.target.value)}
-            required
-          />
-        </label>
+          <label>
+            Club Name:
+            <input
+              type="text"
+              value={club}
+              onChange={(e) => setClub(e.target.value)}
+              required
+            />
+          </label>
+        </div>
 
-        <label>
-          Event Name (Optional):
-          <input
-            type="text"
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-          />
-        </label>
+        <div className="album_form_two_items">
+          <label>
+            Event Name (Optional):
+            <input
+              type="text"
+              value={eventName}
+              onChange={(e) => setEventName(e.target.value)}
+            />
+          </label>
 
-        <label>
-          Venue:
-          <input
-            type="text"
-            value={venue}
-            onChange={(e) => setVenue(e.target.value)}
-          />
-        </label>
+          <label>
+            Venue:
+            <input
+              type="text"
+              value={venue}
+              onChange={(e) => setVenue(e.target.value)}
+            />
+          </label>
+        </div>
 
-        <label>
-          Date:
-          <input
-            type="text"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </label>
+        <div className="album_form_two_items">
+          <label>
+            Date:
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </label>
 
-        <label>
-          Tags (comma-separated):
-          <input
-            type="text"
-            value={tags}
-            onChange={(e) => setTags(e.target.value)}
-          />
-        </label>
+          <label>
+            Tags (comma-separated):
+            <input
+              type="text"
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+            />
+          </label>
+        </div>
 
         <label>
           Cover Photo:
@@ -144,7 +150,7 @@ const AlbumUpload = () => {
           </p>
         </div>
 
-        <button type="submit">Upload Album</button>
+        <button type="submit" className="upload_albumbtn">Upload Album</button>
       </form>
 
       <h3>Selected Files:</h3>

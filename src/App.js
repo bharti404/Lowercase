@@ -8,6 +8,9 @@ import Events from "./components/events/Events";
 import React from 'react'
 import FatsomaWidget from "./components/LowercaseTicket/Lowercaseticketwidget";
 import AlbumUpload from "./components/admin/Album/Albumupload";
+import AdminLayout from "./components/admin/Adminlayout";
+import Abumlist from "./components/admin/Album/Abumlist";
+import Albumshow from "./components/Pages/Albums/Albumshow";
 
 function App() {
   return (
@@ -25,9 +28,17 @@ function App() {
 
       <Route path="/tkt" element={<FatsomaWidget />} />
 
-      <Route path="/admin" element={<AlbumUpload />} />
+      <Route path="/albums" element={<Albumshow />} />
 
 
+      {/* <Route path="/admin" element={<AlbumUpload />} /> */}
+
+
+      <Route path="/admin" element={<AdminLayout />}>
+          <Route path="albumlist" element={<Abumlist />} />
+          <Route path="albumupload" element={<AlbumUpload />} />
+          {/* <Route path="settings" element={<Settings />} /> */}
+        </Route>
 
 
 
