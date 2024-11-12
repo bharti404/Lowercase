@@ -1,43 +1,30 @@
-// components/AlbumUpload.js
-import React, { useState } from 'react';
-import { useDropzone } from 'react-dropzone';
-import axios from 'axios';
-import './Albumupload.css';
+import React, { useState } from "react";
+import { useDropzone } from "react-dropzone";
+import axios from "axios";
+import "./Albumupload.css";
 
 const AlbumUpload = () => {
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
   const [coverPhoto, setCoverPhoto] = useState(null);
-  const [club, setClub] = useState('');
-  const [eventName, setEventName] = useState('');
-  const [venue, setVenue] = useState('');
-  const [date, setDate] = useState('');
-  const [tags, setTags] = useState('');
+  const [club, setClub] = useState("");
+  const [eventName, setEventName] = useState("");
+  const [tags, setTags] = useState("");
   const [files, setFiles] = useState([]);
 
-  const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+  const [venue, setVenue] = useState([]);
+  const [date, setDate] = useState([]);
 
   const onDrop = (acceptedFiles) => {
-    const invalidFiles = [];
-    const validFiles = acceptedFiles.filter((file) => {
-      const fileExtension = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
-      if (!allowedExtensions.includes(fileExtension)) {
-        invalidFiles.push(file.name);
-        return false;
-      }
-      return true;
-    });
-
-    const folderFiles = validFiles.filter((file) => file.webkitRelativePath);
+    // Filter files that include directory path for folder uploads
+    const folderFiles = acceptedFiles.filter((file) => file.webkitRelativePath);
     setFiles(folderFiles);
-
-    if (invalidFiles.length > 0) {
-      alert(`The following files were skipped due to invalid extensions: ${invalidFiles.join(', ')}`);
-    }
   };
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: 'image/*',
+    accept: "image/*",
+    directory: true,
+    webkitdirectory: true, // Allow folder uploads in supported browsers
     multiple: true,
   });
 
@@ -48,35 +35,36 @@ const AlbumUpload = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !coverPhoto || !club || !date) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-
     const formData = new FormData();
-    formData.append('title', title);
-    formData.append('coverPhoto', coverPhoto);
-    formData.append('club', club);
-    formData.append('eventName', eventName);
-    formData.append('venue', venue);
-    formData.append('date', date);
-    formData.append('tags', tags);
+    formData.append("title", title);
+    formData.append("coverPhoto", coverPhoto);
+    formData.append("club", club);
+    formData.append("eventName", eventName);
+    formData.append("tags", tags);
 
+    formData.append("date", date);
+    formData.append("venue", venue);
+
+    // Append each photo in the folder to formData
     files.forEach((file) => {
-      formData.append('photos', file);
+      formData.append("photos", file);
     });
 
     try {
-      const response = await axios.post(`http://localhost:9000/api/album/upload`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      alert('Album uploaded successfully');
+      const response = await axios.post(
+        "http://localhost:9000/api/album/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      alert("Album uploaded successfully");
       console.log(response.data);
     } catch (error) {
-      console.error('Error uploading album:', error);
-      alert('Error uploading album');
+      console.error("Error uploading album:", error);
+      alert("Error uploading album");
     }
   };
 
@@ -125,10 +113,9 @@ const AlbumUpload = () => {
         <label>
           Date:
           <input
-            type="date"
+            type="text"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            required
           />
         </label>
 
@@ -143,12 +130,18 @@ const AlbumUpload = () => {
 
         <label>
           Cover Photo:
-          <input type="file" accept="image/*" onChange={handleCoverPhotoChange} required />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleCoverPhotoChange}
+          />
         </label>
 
-        <div {...getRootProps({ className: 'dropzone' })}>
-          <input {...getInputProps({ directory: true, webkitdirectory: true })} />
-          <p>Drag & drop a folder here with all album images, or click to select</p>
+        <div {...getRootProps()} className="dropzone">
+          <input {...getInputProps()} directory="" webkitdirectory="" />
+          <p>
+            Drag & drop a folder here with all album images, or click to select
+          </p>
         </div>
 
         <button type="submit">Upload Album</button>
