@@ -10,7 +10,7 @@ import FatosmaImg from '../assests/fatsoma_home.jpg'
 import Contact from "./Contact";
 import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
-import Instagidphotos from "../photos/Instagidphotos";
+// import Instagidphotos from "../photos/Instagidphotos";
 
 const Homepage = () => {
 
@@ -59,7 +59,7 @@ const Homepage = () => {
 
       <Brandslogocarousel />
       <Modernphotos />
-      <Instagidphotos />
+      {/* <Instagidphotos /> */}
 
       <Artists />
 

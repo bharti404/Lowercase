@@ -7,6 +7,7 @@ import { IoMdDownload } from "react-icons/io";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Socialshare from "../../Tools/Social/Socialshare";
+import { CiHeart } from "react-icons/ci";
 
 const PhotobyAlbum = () => {
   const location = useLocation();
@@ -23,7 +24,7 @@ const PhotobyAlbum = () => {
   const AlbumdTitle = location.state?.album?.title;
   const albumPhotos = location.state?.album?.photos;
 
-  const [coverAlbumIndex, setCoverAlbumIndex] = useState(0);
+
 
   const style = {
     position: 'absolute',
@@ -37,12 +38,7 @@ const PhotobyAlbum = () => {
     p: 4,
   };
 
-  useEffect(() => {
-    if (albumPhotos && albumPhotos.length > 0) {
-      const randomIndex = Math.floor(Math.random() * albumPhotos.length);
-      setCoverAlbumIndex(randomIndex);
-    }
-  }, [albumPhotos]);
+
 
   useEffect(() => {
     if (shareUrl) {
@@ -66,34 +62,39 @@ const PhotobyAlbum = () => {
   };
 
   const handleDownload = (photoUrl, customFileName) => {
-    // Append the `fl_attachment` transformation flag to the Cloudinary URL
+    // Ensure the download URL has the attachment flag and a valid file extension.
     const downloadUrl = `${photoUrl.replace("/upload", "/upload/fl_attachment")}`;
   
-    // If you want to customize the filename, you can add the `fl_attachment:filename` transformation
-    if (customFileName) {
-      const downloadUrlWithCustomName = `${photoUrl.replace("/upload", `/upload/fl_attachment:${customFileName}`)}`;
-      triggerDownload(downloadUrlWithCustomName);
-    } else {
-      triggerDownload(downloadUrl);
-    }
+    const fileName = customFileName ? `${customFileName}.jpg` : "download.jpg";
+    triggerDownload(downloadUrl, fileName);
   };
   
-  const triggerDownload = (url) => {
+  const triggerDownload = (url, fileName) => {
     const a = document.createElement("a");
     a.href = url;
-    a.setAttribute("download", ""); // Trigger download with no filename if not specified
-    a.style.display = "none";  // Hide the element
+    a.setAttribute("download", fileName);  // Set file name for download
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
   };
+  
+
 
   return (
     <>
       <div className="photobyalbum_headersect">
         <Navbar />
-        <div className="album_show_headerpic">
-          <img src={albumPhotos[coverAlbumIndex]?.url} alt="Cover" />
+        <div className="belownavbar">
+
+          <video
+          className="background-video"
+          src={
+            "https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4"
+          }
+          autoPlay
+          loop
+          muted
+        ></video>
         </div>
 
         <p className="photobyambum_head_text">Photos of : {AlbumdTitle}</p>
@@ -105,6 +106,19 @@ const PhotobyAlbum = () => {
             <img src={photo.url} alt={`photo-${index}`} />
 
             <div className="photobyalbum_pic_content">
+
+            <div className="photobyalbum_pic_content_item">
+                <p className="photobyalbum_icon_txt">Like</p>
+                <CiHeart
+                  className="photobyalbum_icon"
+                  onClick={() => {
+                    console.log("Sharing photo URL:", photo);  // Log photo URL before calling HandleCopyLink
+                    HandleCopyLink(photo.url);  // Pass the photo URL to function
+                  }}
+                />
+              </div>
+
+
               <div className="photobyalbum_pic_content_item">
                 <p className="photobyalbum_icon_txt">Share</p>
                 <FaShare

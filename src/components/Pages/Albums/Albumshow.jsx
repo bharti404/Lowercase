@@ -12,7 +12,6 @@ const Albumshow = () => {
 
 
 
-  const [coverAlbumIndex, setCoverAlbumIndex] = useState(0);
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
   console.log("Base URL:", baseUrl);
@@ -24,13 +23,7 @@ const Albumshow = () => {
         const albumData = response.data.data || [];
         setData(albumData); 
         setLoading(false);
-
-        // Set random cover album index based on data length
-        if (albumData.length > 0) {
-          const randomIndex = Math.floor(Math.random() * albumData.length);
-          console.log("Randomly generated index:", randomIndex);
-          setCoverAlbumIndex(randomIndex);
-        }
+        
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -67,13 +60,20 @@ const Albumshow = () => {
       <div className="albumshow_navbr">
         <Navbar />
       </div>
+      <div className="belownavbar">
+      <video
+          className="background-video"
+          src={
+            "https://res.cloudinary.com/doph28x3i/video/upload/v1729323634/Lowercase%20Events/jwm2qahfxoikoudl7kkc.mp4"
+          }
+          autoPlay
+          loop
+          muted
+        ></video>
+      </div>
 
       <div className="allbimshow_section">
-        <div className="album_show_headerpic">
-          {data[coverAlbumIndex]?.coverPhoto && (
-            <img src={data[coverAlbumIndex].coverPhoto} alt="Cover" />
-          )}
-        </div>
+      
         {sortedYears.map((year) => (
           <div key={year} className="year-section">
             <h2 className="albumshow_year_text">{year}</h2>

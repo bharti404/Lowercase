@@ -45,11 +45,31 @@ const Modernphotos = () => {
       <div className="moden_photos_section">
         <div className="moden_photos_section_container">
           {limitedAlbums.map((album) => (
+            <div className="album_container">
+              <div className="album_name_homepage_text">
+
+              <p className="album_name_homepage_text_title">
+              {album.title.toUpperCase()}
+
+            </p>
+            <p className="album_name_homepage_text_venue">
+
+              {album.venue}
+            </p>
+            <p className="album_name_homepage_text_venue">
+
+            {new Date(album.date).toLocaleDateString()}
+              </p>
+
+              </div>
+      
             <img
               key={album._id} // Add a key for list rendering
               src={album.coverPhoto || "fallback-image-url.jpg"} // Add fallback for missing image
               alt="Album Cover"
-            />
+
+              />
+              </div>
           ))}
         </div>
       </div>
