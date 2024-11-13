@@ -8,11 +8,13 @@ const Abumlist = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  console.log("Base URL:", baseUrl);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:9000/api/album/getall');
+        const response = await axios.get(`${baseUrl}/api/album/getall`);
         setData(response.data); // Adjust this to match the data structure returned by the API
         setLoading(false);
       } catch (error) {
@@ -22,7 +24,7 @@ const Abumlist = () => {
     };
 
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   console.log("iam thhd dtat", data)
 

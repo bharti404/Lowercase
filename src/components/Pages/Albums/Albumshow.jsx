@@ -9,21 +9,26 @@ const Albumshow = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+
+
   const [coverAlbumIndex, setCoverAlbumIndex] = useState(0);
+
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  console.log("Base URL:", baseUrl);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:9000/api/album/getall"
-        );
-        setData(response.data); 
+        const response = await axios.get(`${baseUrl}/api/album/getall`);
+        const albumData = response.data.data || [];
+        setData(albumData); 
         setLoading(false);
 
-        // Set random cover album index based on the data length
-        if (response.data.data.length > 0) {
-          const randomIndex = Math.floor(Math.random() * response.data.data.length);
-          console.log("i ma the ndom genreated", randomIndex)
+        // Set random cover album index based on data length
+        if (albumData.length > 0) {
+          const randomIndex = Math.floor(Math.random() * albumData.length);
+          console.log("Randomly generated index:", randomIndex);
           setCoverAlbumIndex(randomIndex);
         }
       } catch (error) {
@@ -33,7 +38,9 @@ const Albumshow = () => {
     };
 
     fetchData();
-  }, []);
+
+
+  }, [baseUrl]);
 
   const groupAlbumsByYear = (albums) => {
     const albumsByYear = {};
@@ -49,7 +56,7 @@ const Albumshow = () => {
     return albumsByYear;
   };
 
-  const groupedData = groupAlbumsByYear(data.data);
+  const groupedData = groupAlbumsByYear(data);
   const sortedYears = Object.keys(groupedData).sort((a, b) => b - a);
 
   if (loading) return <p>Loading...</p>;
@@ -63,12 +70,14 @@ const Albumshow = () => {
 
       <div className="allbimshow_section">
         <div className="album_show_headerpic">
-          <img src={data.data[coverAlbumIndex]?.coverPhoto} alt="" />
+          {data[coverAlbumIndex]?.coverPhoto && (
+            <img src={data[coverAlbumIndex].coverPhoto} alt="Cover" />
+          )}
         </div>
         {sortedYears.map((year) => (
           <div key={year} className="year-section">
             <h2 className="albumshow_year_text">{year}</h2>
-            <Curvedcard albums={groupedData[year]} />
+            <Curvedcard albums={groupedData[year]}   />
           </div>
         ))}
       </div>

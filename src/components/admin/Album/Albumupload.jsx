@@ -14,6 +14,10 @@ const AlbumUpload = () => {
   const [venue, setVenue] = useState([]);
   const [date, setDate] = useState([]);
 
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  console.log("Base URL:", baseUrl);
+
+
   const onDrop = (acceptedFiles) => {
     // Filter files that include directory path for folder uploads
     const folderFiles = acceptedFiles.filter((file) => file.webkitRelativePath);
@@ -41,7 +45,6 @@ const AlbumUpload = () => {
     formData.append("club", club);
     formData.append("eventName", eventName);
     formData.append("tags", tags);
-
     formData.append("date", date);
     formData.append("venue", venue);
 
@@ -52,7 +55,7 @@ const AlbumUpload = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/album/upload",
+        `${baseUrl}/api/album/upload`,
         formData,
         {
           headers: {

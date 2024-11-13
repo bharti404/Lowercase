@@ -7,10 +7,14 @@ const Instagidphotos = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
   
+
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  console.log("Base URL:", baseUrl);
+
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:9000/api/album/getall');
+          const response = await axios.get(`${baseUrl}/api/album/getall`);
           console.log(response.data); // Verify the structure of the data
           setAlbums(response.data.data); // Adjust this to match the data structure returned by the API
           setLoading(false);
@@ -21,7 +25,7 @@ const Instagidphotos = () => {
       };
   
       fetchData();
-    }, []);
+    }, [baseUrl]);
   
     const limitedAlbums = albums.slice(0, 5); 
   

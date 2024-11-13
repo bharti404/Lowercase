@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./Modernphotos.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Modernphotos = () => {
   const [albums, setAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  console.log("Base URL:", baseUrl);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9000/api/album/getall"
+          `${baseUrl}/api/album/getall`
         );
         console.log(response.data); // Verify the structure of the data
         setAlbums(response.data.data); // Adjust this to match the data structure returned by the API
@@ -23,7 +27,7 @@ const Modernphotos = () => {
     };
 
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   const limitedAlbums = albums.slice(0, 5);
 
@@ -35,7 +39,7 @@ const Modernphotos = () => {
       <div className="moodern_photos_text_sect">
         <p className="moder_photos_heading"> PHOTOS _</p>
 
-        <button className="moder_photos_btn"> View All Albums</button>
+        <Link to='/albums' className="moder_photos_btn"> View All Albums</Link>
       </div>
 
       <div className="moden_photos_section">

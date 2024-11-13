@@ -8,16 +8,31 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 
 import './Curvedcard.css'
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 const Curvedcard = (props) => {
-  // console.log("i am the prrops hee", props.albums);
+  const [admin, setAdmin] = useState(false);
+  const navigate = useNavigate();
 
   const Albums = props.albums.data || props.albums;
-  // console.log("wekjbwefnlfdn", Albums)
+
+  // Check if user is logged in (admin state)
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setAdmin(true);
+    }
+  }, []); // This effect runs only once, on component mount
+
+  const SendToPhotobyAlbum = (album) => {
+    navigate('/photobyalbum', { state: { album: album } });
+  };
+
   return (
     <div className="card_album_section">
       {Albums?.map((album) => (
-        <Card sx={{ minWidth: 345 }} className="curvedcard_cutsom">
-          <CardActionArea>
+        <Card sx={{ minWidth: 345 }} className="curvedcard_cutsom" key={album._id}>
+          <CardActionArea onClick={() => SendToPhotobyAlbum(album)}>
             <CardMedia
               component="img"
               height="180"
@@ -49,15 +64,16 @@ const Curvedcard = (props) => {
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions
-            style={{ display: "flex", justifyContent: "space-between" }}
-          >
-            <Button size="small" color="primary">
-              Edit
-            </Button>
 
-            <Button size="small">Delete</Button>
-          </CardActions>
+          {/* Show admin controls if logged in */}
+          {admin && (
+            <CardActions style={{ display: "flex", justifyContent: "space-between" }}>
+              <Button size="small" color="primary">
+                Edit
+              </Button>
+              <Button size="small">Delete</Button>
+            </CardActions>
+          )}
         </Card>
       ))}
     </div>

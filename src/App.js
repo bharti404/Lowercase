@@ -11,8 +11,10 @@ import AlbumUpload from "./components/admin/Album/Albumupload";
 import AdminLayout from "./components/admin/Adminlayout";
 import Abumlist from "./components/admin/Album/Abumlist";
 import Albumshow from "./components/Pages/Albums/Albumshow";
+import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
 
 function App() {
+
   return (
     <BrowserRouter>
 
@@ -29,6 +31,9 @@ function App() {
       <Route path="/tkt" element={<FatsomaWidget />} />
 
       <Route path="/albums" element={<Albumshow />} />
+
+
+      <Route path="/photobyalbum" element={<Photobyalbum />} />
 
 
       {/* <Route path="/admin" element={<AlbumUpload />} /> */}
