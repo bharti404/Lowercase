@@ -1,62 +1,98 @@
-
-.photobyalbum_section{
-
-
-    display: grid;
-    grid-template-columns: 25vw 25vw 25vw 25vw;
-    width: 100vw;
+.photobyalbum_section {
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  width: 100vw;
 }
 
+.photobyalbum_pic_sect {
+  width: 25vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
 
-.photobyalbum_pic_sect{
-
-    width: 25vw;
-    
-    
 }
 
-
-
-.photobyalbum_pic_sect img{
-    object-fit: cover;
-    object-position: top;
-
-    width: 100%;
-    height: 25vw;
+.photobyalbum_pic_sect img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 25vw;
 }
 
-
-.photobyalbum_headersect .navbar{
-
-
-    background-color: rgb(0 0 0 / 15%);
-    top: 0;
+.photobyalbum_headersect .navbar {
+  background-color: rgb(0 0 0 / 15%);
+  top: 0;
 }
 
+.album_show_headerpic img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  object-position: center;
+}
 
-.album_show_headerpic img{
+.album_show_headerpic {
+  margin: 00 00 20px 00;
+}
 
-    width: 100%;
-    height: 90vh;
-    object-fit: cover;
-    object-position: center;
-    }
-    
-    .album_show_headerpic{
-    
-        margin:00 00 20px 00;
-    
-    }
-    
+.photobyambum_head_text {
+  width: 100%;
+  /* height: 18vh; */
+  color: #fff;
+  font-size: 80px;
+  font-weight: bold;
+  padding-left: 70px;
+  margin: 50px auto 30px auto;
+}
 
-    .photobyambum_head_text{
+.photobyalbum_pic_content {
+  color: #fff;
+  position: absolute;
+  bottom: 0px;
+  align-items: center;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.607);
+  width: 100%;
 
-        width: 100%;
-        /* height: 18vh; */
-        color: #fff;
-        font-size: 80px;
-        font-weight: bold;
-        padding-left: 70px;
-        margin: 50px auto 30px auto;
+}
 
-    }
+.photobyalbum_icon {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 10px;
+  font-size: 64px;
+}
+
+.photobyalbum_icon_txt {
+  padding: 10px;
+  background-color: #00000091;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  top: -30px;
+}
+
+.photobyalbum_pic_sect:hover .photobyalbum_pic_content {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.photobyalbum_pic_content_item {
+  position: relative;
+}
+
+.photobyalbum_pic_content_item:hover .photobyalbum_icon_txt {
+  display: block;
+}
+
+/* .photobyalbum_pic_sect{
+
+
+} */
+
+
+
+
+
