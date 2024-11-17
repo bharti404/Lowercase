@@ -18,6 +18,7 @@ const Footer = () => {
           <Link to="/">
             <img src={LowercaseEventsLogo} alt="" />
           </Link>
+          <p className="footer__beow_ogo_txt"></p>
         </div>
         <div className="lisenced-note">
           COPYRIGHT © 2024 Lower Case Events | Lower Case Events ltd. ALL RIGHTS
@@ -122,7 +123,6 @@ const Footer = () => {
           <li>
             <Link>Privacy Policy</Link>
             <Link>Terms & Conditions</Link>
-
           </li>
         </ul>
         

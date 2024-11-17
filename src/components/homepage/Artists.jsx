@@ -38,14 +38,7 @@ const Artists = () => {
   };
   return (
     <div className="home_artists_section">
-      <div className="home_artist_name_items">
-          <p className="home_artists_section_heading">ARTISTS_</p>
 
-     
-        <div className="home_artist_name_items_right">
-          <button className="home_artists_view_morebtn">VIEW MORE++</button>
-        </div>
-      </div>
 
       <div className="artist_name-slider">
         <Slider {...settings}>
@@ -55,6 +48,15 @@ const Artists = () => {
             </div>
           ))}
         </Slider>
+      </div>
+
+      <div className="home_artist_name_items">
+          <p className="home_artists_section_heading">ARTISTS_</p>
+
+     
+        <div className="home_artist_name_items_right">
+          <button className="home_artists_view_morebtn">VIEW MORE++</button>
+        </div>
       </div>
 
       <div className="home_artists_callage_items">

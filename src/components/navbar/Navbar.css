@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 10; 
     background-color: rgba(0, 0, 0, 0); 
@@ -24,21 +24,21 @@
 }
 
 .navbar-bar {
-    width: 50%;
+    width: 30%;
     display: flex;
     
     justify-content: space-around;
     /* border: 2px solid red; */
 
-    margin: 00 100px 00 00;
+    margin: 00 00 00 00;
     
 }
 
 .navbar-items {
     color: #fff;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 900;
     transition: color 0.3s ease;
     text-decoration: none;
     font-family: "Roboto", sans-serif;

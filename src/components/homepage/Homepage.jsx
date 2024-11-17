@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Homepage.css";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
@@ -7,13 +7,33 @@ import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
 import Artists from "./Artists";
 
 import FatosmaImg from '../assests/fatsoma_home.jpg'
-import Contact from "./Contact";
+// import Contact from "./Contact";
 import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
 // import Instagidphotos from "../photos/Instagidphotos";
 
 const Homepage = () => {
 
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY; // Current scroll position
+      const viewportHeight = window.innerHeight; // Total viewport height
+      const triggerHeight = viewportHeight * 0.22; // 22% of the viewport height
+
+      if (scrollPosition > triggerHeight) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   
 
   return (
@@ -31,7 +51,9 @@ const Homepage = () => {
           muted
         ></video>
 
-        <div className="vdo_home_content_main">
+<div className={`vdo_home_content_main ${isVisible ? "visible" : ""}`}
+          ref={sectionRef}
+        >
           <div className="vdo_home_content_logo">
             <img src={LowerCaseLogo} alt="" />
           </div>
@@ -73,7 +95,7 @@ const Homepage = () => {
 
       <InstagramEmbed />
 
-      <Contact />
+      {/* <Contact /> */}
 
       <Footer />
     </div>
