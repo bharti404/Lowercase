@@ -12,7 +12,14 @@ import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
 // import Instagidphotos from "../photos/Instagidphotos";
 
+import Webgiviewer from "../WebgiViewer/Webgiviewer";
+
 const Homepage = () => {
+
+
+  const webgiViewerRef = useRef();
+  const contentRef = useRef();
+
 
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -78,12 +85,16 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      
 
       <Brandslogocarousel />
       <Modernphotos />
       {/* <Instagidphotos /> */}
 
       <Artists />
+
+      <Webgiviewer contentRef={contentRef} ref={webgiViewerRef} />
+
 
 
 
