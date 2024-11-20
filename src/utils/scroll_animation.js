@@ -38,35 +38,23 @@ export const scrollAnimation = (position, target, isMobile, onUpdate) => {
                 immediateRender: false
             },
         })
-        .to(position, {
-            x: !isMobile ? 1.56 : 9.36,
-            y: !isMobile ? 5.0 : 10.95,
-            z: !isMobile ? 0.01 : 0.09,
-            scrollTrigger: {
-                trigger: '.display-section',
-                start: "top bottom",
-                end: "top top",
-                scrub: 2,
-                immediateRender: false
-            },
-            onUpdate
-        })
+        
         .to(target, {
             x: !isMobile ? -0.55 : -1.62,
             y: !isMobile ? 0.32 : 0.02,
             z: !isMobile ? 0.0 : -0.06,
             scrollTrigger: {
-                trigger: '.display-section',
+                trigger: '.home_artists_section',
                 start: "top bottom",
                 end: "top top",
                 scrub: 2,
                 immediateRender: false
             },
         })
-        .to('.display-section', {
+        .to('.home_artists_section', {
             opacity: 1,
             scrollTrigger: {
-                trigger: '.display-section',
+                trigger: '.home_artists_section',
                 start: "top bottom",
                 end: "top top",
                 scrub: 2,

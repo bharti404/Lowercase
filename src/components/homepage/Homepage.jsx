@@ -6,23 +6,16 @@ import LowerCaseLogo from "../assests/LowercaseLogoRect.png";
 import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
 import Artists from "./Artists";
 
-import FatosmaImg from '../assests/fatsoma_home.jpg'
+import FatosmaImg from "../assests/fatsoma_home.jpg";
 // import Contact from "./Contact";
 import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
+import Supportinghome from "./Supportinghome";
 // import Instagidphotos from "../photos/Instagidphotos";
 
-import Webgiviewer from "../WebgiViewer/Webgiviewer";
-
 const Homepage = () => {
-
-
-  const webgiViewerRef = useRef();
-  const contentRef = useRef();
-
-
-  const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +34,6 @@ const Homepage = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
 
   return (
     <div className="homepage-container">
@@ -58,7 +50,8 @@ const Homepage = () => {
           muted
         ></video>
 
-<div className={`vdo_home_content_main ${isVisible ? "visible" : ""}`}
+        <div
+          className={`vdo_home_content_main ${isVisible ? "visible" : ""}`}
           ref={sectionRef}
         >
           <div className="vdo_home_content_logo">
@@ -85,7 +78,6 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      
 
       <Brandslogocarousel />
       <Modernphotos />
@@ -93,16 +85,11 @@ const Homepage = () => {
 
       <Artists />
 
-      <Webgiviewer contentRef={contentRef} ref={webgiViewerRef} />
-
-
-
+      <Supportinghome />
 
       <div className="home_fatsoma">
-
         <img src={FatosmaImg} alt="" />
       </div>
-
 
       <InstagramEmbed />
 
