@@ -1,71 +1,65 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-.artist_container {
-  background-color: black;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  /* border: 2px solid red; */
-}
-.artistpage_heading {
-  font-family: "Roboto", sans-serif;
-  font-size: 80px;
-  font-weight: 800;
-  color: #fff;
-  margin: 180px 00 20px 00;
+
+
+.artist_top_logo{
+
+  width: 50%;
+  margin: 50px auto;
+  border: 2px solid red;
   text-align: center;
-}
-
-.artist_gallery {
-  width: 100%;
-  height: auto;
-  display: flex;
-
-  flex-wrap: wrap;
-  background-color: black;
-  /* border: 2px solid white; */
-}
-
-.artist_box {
-  width: 25%;
-  height: 40vh;
   position: relative;
-  overflow: hidden;
-  /* border: 2px solid red; */
-  cursor: pointer;
+  top: 00;
 }
 
-.artist_box img {
+
+.artist_top_logo img{
+
+  width: 40%;
+  border: 2px solid green;
+  margin: 50px 00;
+
+}
+
+
+.artist_name_slider_artpage{
+  position: relative;
+  top: 200px;
+
+}
+
+.artist_name_scroll {
+  color: yellow;
+  font-weight: 700;
+  font-size: 44px;
+  margin: 00 10px;
+}
+
+
+.artists_callage_items{
+  display: grid;
+  grid-template-columns:auto auto auto auto auto;
+  align-content: center;
+  gap: 5px;
+  margin-top: 30vh;
+}
+
+.artist_image_item{
+  height: 600px;
+  /* border: 1px solid red; */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.artist_image_item img{
   width: 100%;
   height: 100%;
-  transition: transform 0.3s ease;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 10px;
+  /* object-fit: contain; */
 }
 
-.artist_name {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  color: #fff;
-  text-align: center;
-  transition: bottom 0.3s ease;
-  font-size: 30px;
-
-  font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.artist_box:hover .artist_name {
-  bottom: 40%;
-}
-
-.artist_box:hover img {
-  transform: scale(1.05);
-}
 
 @media screen and (min-width: 2400px) {
   .artistpage_heading {

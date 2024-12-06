@@ -4,13 +4,15 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import LowerCaseLogo from "../assests/LowercaseLogoRect.png";
 import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
-import Artists from "./Artists";
+import Artists from "./Artistshome";
 
 import FatosmaImg from "../assests/fatsoma_home.jpg";
 // import Contact from "./Contact";
 import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
-import Supportinghome from "./Supportinghome";
+import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
+import BrandCreator from "./BrandCreator";
+// import Supportinghome from "./Supportinghome";
 // import Instagidphotos from "../photos/Instagidphotos";
 
 const Homepage = () => {
@@ -80,12 +82,18 @@ const Homepage = () => {
       </div>
 
       <Brandslogocarousel />
+      <Lowercaseticketwidget />
+
+
       <Modernphotos />
       {/* <Instagidphotos /> */}
 
+      <BrandCreator />
+
       <Artists />
 
-      <Supportinghome />
+
+      {/* <Supportinghome /> */}
 
       <div className="home_fatsoma">
         <img src={FatosmaImg} alt="" />

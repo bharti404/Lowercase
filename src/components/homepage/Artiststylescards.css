@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.artist_stylecard-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    gap: 10px;
+}
+
+.artist_stylecard-container .card_artsist_stylsh {
+  flex: 0 0 120px;
+  border-radius: 0.5rem;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  box-shadow: 1px 5px 15px #1e0e3e;
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
+  width: 120px;
+  height: 100%;
+}
+
+.artist_stylecard-container .card_artsist_stylsh:nth-of-type(1) {
+  background: url("../assests/Artists/boogie_with_hoodie.jpg") no-repeat 50% / cover;
+}
+
+.artist_stylecard-container .card_artsist_stylsh:nth-of-type(2) {
+  background: url("../assests/Artists/brysontiller.avif") no-repeat 50% / cover;
+}
+
+.artist_stylecard-container .card_artsist_stylsh:nth-of-type(3) {
+  background: url("../assests/Artists/drake.jpg") no-repeat 50% / cover;
+}
+
+.artist_stylecard-container .card_artsist_stylsh:nth-of-type(4) {
+  background: url("../assests/Artists/Gunna.jpg") no-repeat 50% / cover;
+}
+
+.artist_stylecard-container .card_artsist_stylsh:nth-of-type(5) {
+  background: url("../assests/Artists/boogie_with_hoodie.jpg") no-repeat 50% / cover;
+}
+
+.artist_stylecard-container .content {
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  opacity: 0;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  background: rgb(2, 2, 46);
+  background: linear-gradient(0deg, rgba(2, 2, 46, 0.6755077030812324) 0%, rgba(255, 255, 255, 0) 100%);
+  transform: translateY(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+  visibility: hidden;
+}
+
+.artist_stylecard-container .content span {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+.artist_stylecard-container .card_artsist_stylsh:hover {
+  flex: 0 0 250px;
+  box-shadow: 1px 3px 15px #7645d8;
+  transform: translateY(-30px);
+}
+
+.artist_stylecard-container .card_artsist_stylsh:hover .content {
+  opacity: 1;
+  transform: translateY(0%);
+  visibility: visible;
+}

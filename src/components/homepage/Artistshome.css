@@ -1,10 +1,12 @@
 
 .home_artists_section_heading {
   font-weight: 900;
-  font-size: 120px;
-  color: #fff;
+  font-size: 48px;
+  color: #000;
   font-family: Helvetica;
-  /* margin: 00 00   00 100px; */
+  background-color: yellow;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 
@@ -60,7 +62,8 @@ border-radius: 5px;
 .artist_name-slider{
 
 
-    margin: 10px 00 10px 00;
+    margin: 100px 00 50px 00;
+    position: relative;
 }
 
 .home_fatsoma img{
@@ -75,8 +78,11 @@ border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: 70px auto;
+  padding: 00 44px;
+  width: 100%;
+  margin: 00 auto;
+  position: absolute;
+  top: 0;
 }
 
 .footer__beow_ogo_txt{

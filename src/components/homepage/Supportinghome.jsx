@@ -9,12 +9,10 @@ const Supportinghome = () => {
 
   return (
     <div>
-
-<div ref={contentRef} id="content">
-      <Modernphotos />
-      <Artists />
-
-      <Webgiviewer contentRef={contentRef} ref={webgiViewerRef} />
+      <div ref={contentRef} id="content">
+        <Modernphotos />
+        <Artists />
+        <Webgiviewer contentRef={contentRef} ref={webgiViewerRef} />
       </div>
     </div>
   );

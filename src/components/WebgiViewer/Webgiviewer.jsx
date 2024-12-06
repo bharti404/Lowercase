@@ -146,7 +146,7 @@ import React, {
         y: !isMobile ? 5.0 : 10.95,
         z: !isMobile ? 0.01 : 0.09,
         scrollTrigger: {
-          trigger: ".display-section",
+          trigger: ".modern_photo_parent_section",
           start: "top bottom",
           end: "top top",
           scrub: 2,
@@ -163,7 +163,7 @@ import React, {
         y: !isMobile ? 0.32 : 0.02,
         z: !isMobile ? 0.0 : -0.06,
         scrollTrigger: {
-          trigger: ".display-section",
+          trigger: ".modern_photo_parent_section",
           start: "top bottom",
           end: "top top",
           scrub: 2,

@@ -1,19 +1,14 @@
 import React from "react";
-import "./Artists.css";
-
+import "./Artistshome.css";
 import BoogieWithHoodie from "../assests/Artists/boogie_with_hoodie.jpg";
-
 import Brysontiller from "../assests/Artists/brysontiller.avif";
-
 import Drake from "../assests/Artists/drake.jpg";
-
 import Gunna from "../assests/Artists/Gunna.jpg";
-
 import Lil_Tjay from "../assests/Artists/lil_Tjay.jpg";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Artiststylescards from "./Artiststylescards";
 
 const ArtistNames = [
   "A BOOGIE WITH A HOODIE",
@@ -36,10 +31,9 @@ const Artists = () => {
     arrows: false, // Hide navigation arrows
     pauseOnHover: true, // Keeps autoplaying even when hovered
   };
+
   return (
     <div className="home_artists_section">
-
-
       <div className="artist_name-slider">
         <Slider {...settings}>
           {ArtistNames.map((artist, index) => (
@@ -48,14 +42,13 @@ const Artists = () => {
             </div>
           ))}
         </Slider>
-      </div>
 
-      <div className="home_artist_name_items">
-          <p className="home_artists_section_heading">ARTISTS_</p>
+        <div className="home_artist_name_items">
+          <p className="home_artists_section_heading">ARTISTS</p>
 
-     
-        <div className="home_artist_name_items_right">
-          <button className="home_artists_view_morebtn">VIEW MORE++</button>
+          <div className="home_artist_name_items_right">
+            <button className="home_artists_view_morebtn">VIEW ALL</button>
+          </div>
         </div>
       </div>
 
@@ -81,7 +74,7 @@ const Artists = () => {
         </div>
       </div>
 
-
+      <Artiststylescards />
     </div>
   );
 };
