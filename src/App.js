@@ -12,6 +12,7 @@ import AdminLayout from "./components/admin/Adminlayout";
 import Abumlist from "./components/admin/Album/Abumlist";
 import Albumshow from "./components/Pages/Albums/Albumshow";
 import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
+import Artistdetail from "./components/artist/Artistdetail";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/artist" element={<Artist />} />
+        <Route path="/artist/details" element={<Artistdetail />} />
+
         <Route path="/collab" element={<Collaborations />} />
         <Route path="/photos" element={<Photos />} />
         <Route path="/events" element={<Events />} />
