@@ -6,7 +6,7 @@ import LowerCaseLogo from "../assests/LowercaseLogoRect.png";
 import Brandslogocarousel from "../brandscarousel/Brandslogocarousel";
 import Artists from "./Artistshome";
 
-import FatosmaImg from "../assests/fatsoma_home.jpg";
+// import FatosmaImg from "../assests/fatsoma_home.jpg";
 // import Contact from "./Contact";
 import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
@@ -95,9 +95,9 @@ const Homepage = () => {
 
       {/* <Supportinghome /> */}
 
-      <div className="home_fatsoma">
+      {/* <div className="home_fatsoma">
         <img src={FatosmaImg} alt="" />
-      </div>
+      </div> */}
 
       <InstagramEmbed />
 

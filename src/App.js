@@ -40,8 +40,11 @@ function App() {
           <Route path="albumupload" element={<AlbumUpload />} />
           {/* <Route path="settings" element={<Settings />} /> */}
         </Route>
+
+
       </Routes>
     </BrowserRouter>
+    
   );
 }
 

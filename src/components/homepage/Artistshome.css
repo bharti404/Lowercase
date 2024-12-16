@@ -7,8 +7,13 @@
   background-color: yellow;
   padding: 10px;
   border-radius: 5px;
+
 }
 
+.home_artists_section{
+
+  margin: 100px 00;
+}
 
 
 .home_artists_view_morebtn {

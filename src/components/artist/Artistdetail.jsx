@@ -53,7 +53,6 @@ const Artistdetail = (props) => {
             nobis corrupti pariatur?
           </p>
 
-
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, culpa
             mollitia natus commodi unde excepturi velit, eligendi dolores
@@ -85,7 +84,7 @@ const Artistdetail = (props) => {
 
       <div className="artist_detail_vdo">
         {/* <video src=""></video> */}
-
+        
         <iframe width="100%" height="600" src="https://www.youtube.com/embed/5FH534hKrs8?si=7VFdJIEZQc29OL3r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
