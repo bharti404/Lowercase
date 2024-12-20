@@ -25,7 +25,8 @@ const Curvedcard = (props) => {
   }, []); // This effect runs only once, on component mount
 
   const SendToPhotobyAlbum = (album) => {
-    navigate('/photobyalbum', { state: { album: album } });
+    // navigate('/photobyalbum', { state: { album: album } });
+    navigate(`/photobyalbum/${album._id}`);
   };
 
   return (

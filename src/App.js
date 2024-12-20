@@ -31,7 +31,7 @@ function App() {
 
         <Route path="/albums" element={<Albumshow />} />
 
-        <Route path="/photobyalbum" element={<Photobyalbum />} />
+        <Route path="/photobyalbum/:id" element={<Photobyalbum />} />
 
         {/* <Route path="/admin" element={<AlbumUpload />} /> */}
 

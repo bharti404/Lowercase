@@ -8,6 +8,20 @@
 .photobyalbum_pic_sect {
   margin: 10px;
   position: relative;
+
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(128, 0, 128, 0.8) 0px 10px 10px;
+  transform-origin: 50% 65%;
+  transition: transform 5s, filter 3s ease-in-out;
+  filter: brightness(90%);
+
+}
+
+
+.photobyalbum_pic_sect:hover{
+  filter: brightness(100%);
+  transform: scale(1.1);
 }
 
 .photobyalbum_pic_sect img {
@@ -16,11 +30,11 @@
   vertical-align: middle;
   display: inline-block;
   border-radius: 10px;
-
   filter: drop-shadow(0 0 0.75rem crimson);
 
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(128, 0, 128, 0.8) 0px 10px 10px;
+
+
+
 }
 
 .background-video {
@@ -46,6 +60,9 @@
   display: none;
   background-color: rgba(0, 0, 0, 0.607);
   width: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
 }
 
 .photobyalbum_icon {
@@ -99,4 +116,16 @@
 
 .photobyalbum_headersect {
   margin: 20px 00 250px 00;
+}
+
+
+.photoallbum_like_count{
+
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: crimson;
 }
