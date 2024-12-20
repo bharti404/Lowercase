@@ -1,43 +1,50 @@
 import React, { useState } from "react";
-import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import "./Albumupload.css";
 
 const AlbumUpload = () => {
   const [title, setTitle] = useState("");
+  const [folderPath, setFolderPath] = useState("");
   const [coverPhoto, setCoverPhoto] = useState(null);
   const [club, setClub] = useState("");
   const [eventName, setEventName] = useState("");
   const [tags, setTags] = useState("");
-  const [files, setFiles] = useState([]);
-
-  const [venue, setVenue] = useState([]);
-  const [date, setDate] = useState([]);
+  const [venue, setVenue] = useState("");
+  const [date, setDate] = useState("");
+  const [dropboxImages, setDropboxImages] = useState([]);
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
-  console.log("Base URL:", baseUrl);
-
-
-  const onDrop = (acceptedFiles) => {
-    // Filter files that include directory path for folder uploads
-    const folderFiles = acceptedFiles.filter((file) => file.webkitRelativePath);
-    setFiles(folderFiles);
-  };
-
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    accept: "image/*",
-    directory: true,
-    webkitdirectory: true, // Allow folder uploads in supported browsers
-    multiple: true,
-  });
 
   const handleCoverPhotoChange = (e) => {
     setCoverPhoto(e.target.files[0]);
   };
 
+  const handleFetchDropbox = async (e) => {
+    e.preventDefault();
+
+    if (!folderPath) {
+      alert("Please enter a folder path.");
+      return;
+    }
+
+    try {
+      const response = await axios.get(`${baseUrl}/api/drropbox/fetch-files?path=/${folderPath}`);
+      const images = response.data.AllImages;
+      setDropboxImages(images);
+      alert("Dropbox album fetched successfully.");
+    } catch (error) {
+      console.error("Error fetching Dropbox files:", error);
+      alert("Error fetching Dropbox files. Please try again.");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!title || !club || !date || !coverPhoto) {
+      alert("Please fill in all required fields.");
+      return;
+    }
 
     const formData = new FormData();
     formData.append("title", title);
@@ -48,120 +55,132 @@ const AlbumUpload = () => {
     formData.append("date", date);
     formData.append("venue", venue);
 
-    // Append each photo in the folder to formData
-    files.forEach((file) => {
-      formData.append("photos", file);
-    });
+    // Append dropboxImages as a JSON string
+    formData.append("dropboxImages", JSON.stringify(dropboxImages));
 
     try {
       const response = await axios.post(
         `${baseUrl}/api/album/upload`,
         formData,
         {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+          headers: { "Content-Type": "multipart/form-data" },
         }
       );
-      alert("Album uploaded successfully");
+      alert("Album uploaded successfully.");
       console.log(response.data);
     } catch (error) {
       console.error("Error uploading album:", error);
-      alert("Error uploading album");
+      alert("Error uploading album. Please try again.");
     }
   };
 
   return (
-    <div className="album-upload">
-      <h2 className="abumupaod_head">Upload Album</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="album_form_two_items">
-          <label>
-            Album Title:
+    <div className="album-upload-container">
+      <div className="album-upload">
+        <h2>Upload Album</h2>
+
+        <div className="dropbox-fetch">
+          <form onSubmit={handleFetchDropbox}>
+            <input
+              type="text"
+              placeholder="Folder Name"
+              value={folderPath}
+              onChange={(e) => setFolderPath(e.target.value)}
+            />
+            <button type="submit" className="fetch-button">
+              Fetch Dropbox Album
+            </button>
+          </form>
+        </div>
+
+        <form onSubmit={handleSubmit} className="album-form">
+          <div className="form-group">
+            <label>Album Title:</label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
             />
-          </label>
+          </div>
 
-          <label>
-            Club Name:
+          <div className="form-group">
+            <label>Club Name:</label>
             <input
               type="text"
               value={club}
               onChange={(e) => setClub(e.target.value)}
               required
             />
-          </label>
-        </div>
+          </div>
 
-        <div className="album_form_two_items">
-          <label>
-            Event Name (Optional):
+          <div className="form-group">
+            <label>Event Name (Optional):</label>
             <input
               type="text"
               value={eventName}
               onChange={(e) => setEventName(e.target.value)}
             />
-          </label>
+          </div>
 
-          <label>
-            Venue:
+          <div className="form-group">
+            <label>Venue:</label>
             <input
               type="text"
               value={venue}
               onChange={(e) => setVenue(e.target.value)}
             />
-          </label>
-        </div>
+          </div>
 
-        <div className="album_form_two_items">
-          <label>
-            Date:
+          <div className="form-group">
+            <label>Date:</label>
             <input
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
+              required
             />
-          </label>
+          </div>
 
-          <label>
-            Tags (comma-separated):
+          <div className="form-group">
+            <label>Tags (comma-separated):</label>
             <input
               type="text"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
             />
-          </label>
+          </div>
+
+          <div className="form-group">
+            <label>Cover Photo:</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleCoverPhotoChange}
+              required
+            />
+          </div>
+
+          <button type="submit" className="submit-button">
+            Upload Album
+          </button>
+        </form>
+      </div>
+
+      <div className="dropboxpictures_container">
+        <p className="selecteddropbox_head">Selected Dropbox Album Images</p>
+        <div className="dropboxpictures_container_items">
+          {dropboxImages.map((urlpic) => (
+            <div className="dropboxpictures_container_item" key={urlpic}>
+              <img
+                src={urlpic}
+                alt=""
+                className="dropboxpictures_container_item_pic"
+              />
+            </div>
+          ))}
         </div>
-
-        <label>
-          Cover Photo:
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleCoverPhotoChange}
-          />
-        </label>
-
-        <div {...getRootProps()} className="dropzone">
-          <input {...getInputProps()} directory="" webkitdirectory="" />
-          <p>
-            Drag & drop a folder here with all album images, or click to select
-          </p>
-        </div>
-
-        <button type="submit" className="upload_albumbtn">Upload Album</button>
-      </form>
-
-      <h3>Selected Files:</h3>
-      <ul>
-        {files.map((file, index) => (
-          <li key={index}>{file.webkitRelativePath || file.name}</li>
-        ))}
-      </ul>
+      </div>
     </div>
   );
 };

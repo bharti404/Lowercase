@@ -77,3 +77,51 @@ cursor: pointer;
 
 
   }
+
+
+  .dropboxpictures_container{
+
+    margin: 50px auto;
+    background-color: #e5e5e5;
+    padding: 5px 10px;
+    width: 40%;
+  }
+
+
+  .dropboxpictures_container_items{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+
+  }
+
+  .dropboxpictures_container_item{
+
+    width: 20%;
+  }
+
+
+  .dropboxpictures_container_item_pic{
+
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .selecteddropbox_head{
+
+    font-weight: 700;
+    margin: 10px 00;
+
+  }
+
+  .album-upload-container{
+
+    display: flex;
+   
+    justify-content: space-around;
+  }

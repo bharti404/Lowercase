@@ -1,32 +1,31 @@
 .photobyalbum_section {
-  display: grid;
-  grid-template-columns: 25vw 25vw 25vw 25vw;
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 3rem 0;
   width: 100vw;
 }
 
 .photobyalbum_pic_sect {
-  width: 25vw;
+  margin: 10px;
   position: relative;
-  display: flex;
-  justify-content: center;
-
 }
 
 .photobyalbum_pic_sect img {
-  object-fit: cover;
-  object-position: top;
-  width: 100%;
-  height: 25vw;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 10px;
+
+  filter: drop-shadow(0 0 0.75rem crimson);
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(128, 0, 128, 0.8) 0px 10px 10px;
 }
 
-
-
-.background-video{
+.background-video {
   width: 100%;
-
 }
-
-
 
 .photobyambum_head_text {
   width: 100%;
@@ -36,6 +35,7 @@
   font-weight: bold;
   padding-left: 70px;
   margin: 50px auto 30px auto;
+  text-align: center;
 }
 
 .photobyalbum_pic_content {
@@ -46,7 +46,6 @@
   display: none;
   background-color: rgba(0, 0, 0, 0.607);
   width: 100%;
-
 }
 
 .photobyalbum_icon {
@@ -56,6 +55,19 @@
   margin: 10px;
   font-size: 64px;
 }
+
+
+.photobyalbum_icon_heart{
+
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 10px;
+  font-size: 64px;
+  color: red;
+}
+
+
 
 .photobyalbum_icon_txt {
   padding: 10px;
@@ -85,7 +97,6 @@
 
 } */
 
-
-
-
-
+.photobyalbum_headersect {
+  margin: 20px 00 250px 00;
+}
