@@ -1,18 +1,117 @@
 /* AdminLayout.css */
 .admin-layout {
-    display: flex;
-  }
+  display: flex;
+  background: linear-gradient(90deg, #000, #424242);
+}
+
+.sidebar {
+  width: 15%;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  background-color: #2c3e50;
+}
+
+.main-content {
+  width: 85vw;
+  padding: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none !important;
+}
+
+.sidebar nav ul li {
+  margin: 30px 0;
+  position: relative;
+}
+
+.sidebar ul li a {
+  width: 200px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1em;
+  background: rgb(43, 43, 43);
+  position: relative;
+  color: white;
+  border-radius: 5px;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.sidebar ul li a::before,
+.sidebar ul li a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 5px;
+  width: 105%;
+  transition: all 0.4s;
+}
+
+.sidebar ul li a::before {
+  left: 0%;
+  height: 130%;
+  background: linear-gradient(to right, #D4145A, #000);
+}
+
+.sidebar ul li a::after {
+  left: -10%;
+  height: 120%;
+  background: #ffffff56;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
+}
+
+.sidebar ul li a:hover::before {
+  transform: translateX(15%);
+  background: linear-gradient(to right, #0575e6, #D4145A, #000);
+}
+
+.sidebar ul li a:hover::after {
+  transform: translateX(-15%);
+
+}
+
+.btmbox {
+  height: 20px;
+  width: 30px;
+  z-index: 10;
+  position: absolute;
+  background: linear-gradient(to right, #2A0812, #000);
+  right: -20px;
+  border-bottom-left-radius: 20px;
+}
+
+.topbox {
+  height: 20px;
+  width: 30px;
+  z-index: 12;
+  position: absolute;
+  background: linear-gradient(to right, #2A0812, #000);
+  right: -20px;
+  top: -15px;
+  border-top-left-radius: 20px;
+}
+
+.topbox,
+.btmbox {
+  display: none; /* Hide by default */
+}
+
+.active .topbox,
+.active .btmbox {
+  display: block; /* Show when active */
+}
+
+/* Apply hover effect for active items */
+.active a::after {
+  transform: translateX(-15%) !important; /* Always apply the hover effect */
   
-  .sidebar {
-    width: 15vw;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    height: 100vh;
-  }
-  
-  .main-content {
-    width: 85vw;
-    padding: 20px;
-  }
-  
+}
+
+.active a::before {
+  transform: translateX(15%) !important; /* Always apply the hover effect */
+}

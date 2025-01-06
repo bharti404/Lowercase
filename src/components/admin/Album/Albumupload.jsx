@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Albumupload.css";
+import { FallingLines, InfinitySpin } from "react-loader-spinner";
 
 const AlbumUpload = () => {
   const [title, setTitle] = useState("");
@@ -12,6 +13,9 @@ const AlbumUpload = () => {
   const [venue, setVenue] = useState("");
   const [date, setDate] = useState("");
   const [dropboxImages, setDropboxImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  var assets = true;
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -21,20 +25,27 @@ const AlbumUpload = () => {
 
   const handleFetchDropbox = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     if (!folderPath) {
       alert("Please enter a folder path.");
+      setLoading(false);
       return;
     }
 
     try {
-      const response = await axios.get(`${baseUrl}/api/drropbox/fetch-files?path=/${folderPath}`);
+      const response = await axios.get(
+        `${baseUrl}/api/drropbox/fetch-files?path=/${folderPath}`
+      );
       const images = response.data.AllImages;
+
       setDropboxImages(images);
       alert("Dropbox album fetched successfully.");
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching Dropbox files:", error);
       alert("Error fetching Dropbox files. Please try again.");
+      setLoading(false);
     }
   };
 
@@ -74,6 +85,14 @@ const AlbumUpload = () => {
     }
   };
 
+  useEffect(() => {
+    if (dropboxImages.length > 0) {
+      assets = false;
+    }
+
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="album-upload-container">
       <div className="album-upload">
@@ -86,10 +105,23 @@ const AlbumUpload = () => {
               placeholder="Folder Name"
               value={folderPath}
               onChange={(e) => setFolderPath(e.target.value)}
+              required
             />
-            <button type="submit" className="fetch-button">
-              Fetch Dropbox Album
-            </button>
+
+            {loading ? (
+              <span>
+                <FallingLines
+                  color="#4fa94d"
+                  width="100"
+                  visible={true}
+                  ariaLabel="falling-circles-loading"
+                />
+              </span>
+            ) : (
+              <button type="submit" className="fetch-button mrgnbtm-2">
+                <span>Fetch Dropbox Album</span>
+              </button>
+            )}
           </form>
         </div>
 
@@ -139,6 +171,7 @@ const AlbumUpload = () => {
               value={date}
               onChange={(e) => setDate(e.target.value)}
               required
+              className="custom-date-input"
             />
           </div>
 
@@ -161,25 +194,44 @@ const AlbumUpload = () => {
             />
           </div>
 
-          <button type="submit" className="submit-button">
-            Upload Album
+          <button type="submit" className="fetch-button">
+            <span>Upload Album</span>
           </button>
         </form>
       </div>
 
       <div className="dropboxpictures_container">
-        <p className="selecteddropbox_head">Selected Dropbox Album Images</p>
-        <div className="dropboxpictures_container_items">
-          {dropboxImages.map((urlpic) => (
-            <div className="dropboxpictures_container_item" key={urlpic}>
-              <img
-                src={urlpic}
-                alt=""
-                className="dropboxpictures_container_item_pic"
-              />
+        {assets ? (
+          <>
+            <p className="selecteddropbox_head">
+              Plese choose Dropbox Folder to fetch Images
+            </p>
+
+            <InfinitySpin
+              visible={true}
+              width="200"
+              color="#4fa94d"
+              ariaLabel="infinity-spin-loading"
+            />
+          </>
+        ) : (
+          <>
+            <p className="selecteddropbox_head">
+              Selected Dropbox Album Images
+            </p>
+            <div className="dropboxpictures_container_items">
+              {dropboxImages.map((urlpic) => (
+                <div className="dropboxpictures_container_item" key={urlpic}>
+                  <img
+                    src={urlpic}
+                    alt=""
+                    className="dropboxpictures_container_item_pic"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
     </div>
   );
