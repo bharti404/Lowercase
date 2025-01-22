@@ -1,10 +1,10 @@
 import React from "react";
 import "./Artistshome.css";
-import BoogieWithHoodie from "../assests/Artists/boogie_with_hoodie.jpg";
-import Brysontiller from "../assests/Artists/brysontiller.avif";
-import Drake from "../assests/Artists/drake.jpg";
-import Gunna from "../assests/Artists/Gunna.jpg";
-import Lil_Tjay from "../assests/Artists/lil_Tjay.jpg";
+// import BoogieWithHoodie from "../assests/Artists/boogie_with_hoodie.jpg";
+// import Brysontiller from "../assests/Artists/brysontiller.avif";
+// import Drake from "../assests/Artists/drake.jpg";
+// import Gunna from "../assests/Artists/Gunna.jpg";
+// import Lil_Tjay from "../assests/Artists/lil_Tjay.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -52,7 +52,7 @@ const Artists = () => {
         </div>
       </div>
 
-      <div className="home_artists_callage_items">
+      {/* <div className="home_artists_callage_items">
         <div className="home_artist_image_item">
           <img src={BoogieWithHoodie} alt="" />
         </div>
@@ -72,7 +72,7 @@ const Artists = () => {
         <div className="home_artist_image_item">
           <img src={Lil_Tjay} alt="" />
         </div>
-      </div>
+      </div> */}
 
       <Artiststylescards />
     </div>

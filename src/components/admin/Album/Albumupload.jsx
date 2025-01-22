@@ -15,7 +15,7 @@ const AlbumUpload = () => {
   const [dropboxImages, setDropboxImages] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  var assets = true;
+  const [assets, setAssets] = useState(true);
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -87,7 +87,7 @@ const AlbumUpload = () => {
 
   useEffect(() => {
     if (dropboxImages.length > 0) {
-      assets = false;
+      setAssets(false);
     }
 
     // eslint-disable-next-line
