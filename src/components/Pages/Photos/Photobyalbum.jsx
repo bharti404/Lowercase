@@ -16,9 +16,6 @@ import { useParams } from 'react-router-dom';
 const PhotobyAlbum = () => {
   const { id } = useParams();
 
-
-
-
   const [open, setOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState(null);
   const [albumPhotos , setAlbumPhotos] = useState([])
