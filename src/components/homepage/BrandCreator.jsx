@@ -16,7 +16,7 @@ const BrandCreator = () => {
     const settings = {
         infinite: true,
         speed: 3000, // Adjust the speed for smooth scrolling
-        slidesToShow: 4, // Number of logos visible at a time
+        slidesToShow: 1, // Number of logos visible at a time
         slidesToScroll: 1,
         autoplay: true, // Enable autoplay
         autoplaySpeed: 0, // Continuous autoplay speed

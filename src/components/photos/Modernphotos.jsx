@@ -29,7 +29,7 @@ const Modernphotos = () => {
     fetchData();
   }, [baseUrl]);
 
-  const limitedAlbums = albums.slice(0, 5);
+  const limitedAlbums = albums.slice(0, 6);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -37,29 +37,32 @@ const Modernphotos = () => {
   return (
     <div className="modern_photo_parent_section">
       <div className="moodern_photos_text_sect">
-        <p className="moder_photos_heading"> PHOTOS _</p>
+        <p className="moder_photos_heading"> Event Albums</p>
 
-        <Link to='/albums' className="moder_photos_btn"> View All Albums</Link>
+        <Link to='/albums' className="moder_photos_btn">VIEW ALL ALBUMS </Link>
       </div>
+      <hr className="horizontal_line"/>
 
-      <div className="moden_photos_section">
+      {/* <div className="moden_photos_section">
         <div className="moden_photos_section_container">
           {limitedAlbums.map((album) => (
             <div className="album_container">
               <div className="album_name_homepage_text">
 
-              <p className="album_name_homepage_text_title">
-              {album.title.toUpperCase()}
+                <p className="album_name_homepage_text_title">
+                  {album.title.toUpperCase()}
+                </p>
+            
+                <p className="album_name_homepage_text_venue">
 
-            </p>
-            <p className="album_name_homepage_text_venue">
+                  {album.venue}
+                  
+                </p>
+                
+                <p className="album_name_homepage_text_venue">
 
-              {album.venue}
-            </p>
-            <p className="album_name_homepage_text_venue">
-
-            {new Date(album.date).toLocaleDateString()}
-              </p>
+                {new Date(album.date).toLocaleDateString()}
+                </p>
 
               </div>
       
@@ -72,7 +75,7 @@ const Modernphotos = () => {
               </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

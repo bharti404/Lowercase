@@ -124,3 +124,13 @@ font-weight: 700;
 
     margin: 100px 00;
 }
+.vdo_home_content_logo {
+  perspective: 1000px; /* Enables 3D effect */
+}
+
+.rotating-logo {
+  transition: transform 0.1s linear;
+  transform-style: preserve-3d;
+  width: 150px;
+  height: auto;
+}

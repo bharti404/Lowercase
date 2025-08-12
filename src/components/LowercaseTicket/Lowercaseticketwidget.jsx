@@ -16,6 +16,7 @@ const FatsomaWidget = () => {
       script.dataset.reference = 'b604fd9d-8c9d-456c-8e09-ebccb95cb010';
   
       container.appendChild(script);
+      
     }
   
     // Cleanup function

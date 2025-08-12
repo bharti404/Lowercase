@@ -14,6 +14,8 @@ import video3 from '../assests/video3.mp4';
 import video4 from '../assests/video4.mp4';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
+import Prefooter from "../footer/Prefooter";
+
 // import { GrSend } from "react-icons/gr";
 
 
@@ -127,6 +129,7 @@ const About = () => {
 
              
             </div>
+            <Prefooter/>
             <Footer />
         </div>
 

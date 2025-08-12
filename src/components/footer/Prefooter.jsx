@@ -1,6 +1,7 @@
 import React from "react";
 import "./Prefooter.css";
 import FatosmaImg from "../assests/fatsoma_home.jpg";
+import FatsomaImg2 from "../assests/fatsoma_logo2.png";
 
 const Prefooter = () => {
   return (
@@ -12,7 +13,7 @@ const Prefooter = () => {
           </div>
 
           <div className="prefooter_main_left_bottom">
-          <img src={FatosmaImg} alt="" />
+          <img src={FatsomaImg2} alt="" />
           </div>
         </div>
 
@@ -39,16 +40,16 @@ const Prefooter = () => {
 
                 <div className="preefooter_right_form_top">
 
-                <input type="text"  placeholder="Enter your number*"/>
-                <button className="prefooter_sbmtbtn">Submit</button>
+                  <input type="text"  placeholder="Enter your number*"/>
+                  <button className="prefooter_sbmtbtn">Submit</button>
                 </div>
 
-                <div className="preefooter_right_form_btm">
+                 <div className="preefooter_right_form_btm">
 
 
                 
                 <input type="text" placeholder="Enter your city*" />
-                </div>
+              </div>
               </form>
             </div>
           </div>

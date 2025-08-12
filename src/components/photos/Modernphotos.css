@@ -8,7 +8,7 @@
 
 .moder_photos_heading {
   font-weight: 900;
-  font-size: 120px;
+  font-size: 60px;
   color: #fff;
   font-family: Helvetica;
 }
@@ -99,4 +99,14 @@
 
   font-weight: 400;
   font-size: 12px;
+}
+.horizontal_line{
+
+  border: none;
+  height: 2px; 
+  background-color: rgb(69, 60, 21); 
+  width: 70%; 
+  margin-left: 40px;
+
+;
 }

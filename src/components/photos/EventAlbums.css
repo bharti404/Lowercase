@@ -1,0 +1,71 @@
+.event-albums-container {
+  padding: 40px 50px 40px 50px;
+  background-color: #000;
+  color: white;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fff;
+  border-bottom: 2px solid gold;
+  width: fit-content;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns:  repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .albums-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .albums-grid {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+}
+
+.album-card {
+  border: 8px solid #ff3c69;
+  padding: 10px;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-card img,
+.album-card .empty-box {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.album-card .empty-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 14px;
+}
+
+.album-info {
+  margin-top: 10px;
+}
+
+.event-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.event-location,
+.event-date {
+  font-size: 14px;
+  color: #ccc;
+}

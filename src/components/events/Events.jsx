@@ -10,6 +10,8 @@ import vegas from '../assests/vegas.jpg';
 import chicago from '../assests/chicago.jpg';
 import Footer from '../footer/Footer';
 import Navbar from '../navbar/Navbar';
+import Prefooter from "../footer/Prefooter";
+
 
 
 
@@ -104,6 +106,7 @@ const Events = () => {
                         <div className="events-card"><img src={newyork} alt="travis" /></div>
                     </div>
                 </div>
+            <Prefooter/>
             <Footer />
             </div>
 

@@ -13,6 +13,7 @@ import { IoHeart } from "react-icons/io5";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
+
 const PhotobyAlbum = () => {
   const { id } = useParams();
 

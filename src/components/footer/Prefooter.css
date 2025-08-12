@@ -56,14 +56,19 @@
 .prefooter_right_top_head{
 
     font-weight: 700;
-    font-size: 18px;
+    font-size: 24px;
     font-family: 'Roboto';
 }
 
 .prefooter_right_bottom_head{
 
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
+    color: rgb(152, 151, 151);
+    strong{
+        font-weight: 700;
+        color: white;
+    }
 }
 
 
@@ -101,7 +106,7 @@
 
 .prefooter_formform input::placeholder {
     font-weight: bold;
-    color: #fff;
+    color: #7a7777;
   }
 
 .preefooter_right_form_top{
@@ -119,4 +124,7 @@
     font-weight: 700;
     font-size: 18px;
     border-radius: 5px;
+}
+.prefooter_main_left_bottom  img , .prefooter_main_left_top img{
+    height: 100px;
 }
