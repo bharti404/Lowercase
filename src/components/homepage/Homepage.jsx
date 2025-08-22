@@ -16,6 +16,7 @@ import InstagramEmbed from "../Insta/Insta";
 import Modernphotos from "../photos/Modernphotos";
 import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
 import BrandCreator from "./BrandCreator";
+import PhotoWall from "./PhotoWall";
 
 
 
@@ -118,6 +119,8 @@ const Homepage = () => {
       {/* <Instagidphotos /> */}
 
       <EventAlbums />
+
+      <PhotoWall/>
 
       <BrandCreator />
 

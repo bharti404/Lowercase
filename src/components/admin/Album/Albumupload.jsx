@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Albumupload.css";
-import { FallingLines, InfinitySpin } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 const AlbumUpload = () => {
   const [title, setTitle] = useState("");
-  const [folderPath, setFolderPath] = useState("");
   const [coverPhoto, setCoverPhoto] = useState(null);
   const [club, setClub] = useState("");
   const [eventName, setEventName] = useState("");
@@ -14,46 +13,113 @@ const AlbumUpload = () => {
   const [date, setDate] = useState("");
   const [dropboxImages, setDropboxImages] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const [assets, setAssets] = useState(true);
+  const [selectedFolder, setSelectedFolder] = useState(null);
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const handleCoverPhotoChange = (e) => {
-    setCoverPhoto(e.target.files[0]);
+    if (e.target.files && e.target.files[0]) {
+      setCoverPhoto(e.target.files[0]);
+    }
   };
 
-  const handleFetchDropbox = async (e) => {
-    e.preventDefault();
-    setLoading(true);
 
+  const openDropboxChooser = () => {
+    const options = {
+      success: function (files) {
+       
+        const folder = files[0];
+        console.log("Selected folder:", folder);
+        
+        // Store the folder info in state
+        setSelectedFolder(folder);
+        
+        // Automatically fetch images from this folder
+        handleFetchDropboxFolder(folder);
+      },
+      cancel: function () {
+        console.log("Chooser closed");
+      },
+      linkType: "preview",
+      multiselect: false,
+      folderselect: true, // Enable folder selection
+    };
+
+    window.Dropbox.choose(options);
+  };
+
+  // Function to fetch images from the selected folder
+ const handleFetchDropboxFolder = async (folderPath) => {
     if (!folderPath) {
-      alert("Please enter a folder path.");
-      setLoading(false);
+      alert("No folder path available.");
       return;
     }
 
+    setLoading(true);
     try {
+      // Use your existing endpoint with the folder path
       const response = await axios.get(
         `${baseUrl}/api/drropbox/fetch-files?path=/${folderPath}`
       );
-      const images = response.data.AllImages;
-
+      
+      // Adjust this based on your actual API response structure
+      const images = response.data.AllImages || response.data.images || [];
+      
       setDropboxImages(images);
-      alert("Dropbox album fetched successfully.");
-      setLoading(false);
+      setAssets(false);
+      alert("Dropbox folder images fetched successfully!");
     } catch (error) {
-      console.error("Error fetching Dropbox files:", error);
-      alert("Error fetching Dropbox files. Please try again.");
-      setLoading(false);
+      console.error("Error fetching Dropbox folder:", error);
+      alert("Error fetching Dropbox folder. Check console.");
     }
+    setLoading(false);
+  }
+
+
+
+  const handleFolderUpload = async (e) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      Array.from(files).forEach((file) => {
+        formData.append("files", file);
+      });
+      formData.append("albumTitle", title || "untitled_album");
+
+      // Your backend should handle uploading to Dropbox with its SDK
+      const res = await axios.post(
+        `${baseUrl}/api/dropbox/folder-upload`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+
+      setDropboxImages(res.data.links); // backend should return uploaded Dropbox links
+      setAssets(false);
+      alert("Folder uploaded successfully!");
+    } catch (error) {
+      console.error("Error uploading folder:", error);
+      alert("Error uploading folder. Check console.");
+    }
+    setLoading(false);
   };
 
+  // 🔹 Submit album metadata
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!title || !club || !date || !coverPhoto) {
       alert("Please fill in all required fields.");
+      return;
+    }
+
+    if (dropboxImages.length === 0) {
+      alert("Please select or upload images first.");
       return;
     }
 
@@ -65,8 +131,6 @@ const AlbumUpload = () => {
     formData.append("tags", tags);
     formData.append("date", date);
     formData.append("venue", venue);
-
-    // Append dropboxImages as a JSON string
     formData.append("dropboxImages", JSON.stringify(dropboxImages));
 
     try {
@@ -77,10 +141,25 @@ const AlbumUpload = () => {
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
+
       alert("Album uploaded successfully.");
       console.log(response.data);
+
+      // Reset form
+      setTitle("");
+      setCoverPhoto(null);
+      setClub("");
+      setEventName("");
+      setTags("");
+      setVenue("");
+      setDate("");
+      setDropboxImages([]);
+      setAssets(true);
     } catch (error) {
       console.error("Error uploading album:", error);
+      if (error.response) {
+        console.error("Server response:", error.response.data);
+      }
       alert("Error uploading album. Please try again.");
     }
   };
@@ -89,41 +168,16 @@ const AlbumUpload = () => {
     if (dropboxImages.length > 0) {
       setAssets(false);
     }
-
-    // eslint-disable-next-line
-  }, []);
+  }, [dropboxImages]);
 
   return (
     <div className="album-upload-container">
       <div className="album-upload">
         <h2>Upload Album</h2>
 
-        <div className="dropbox-fetch">
-          <form onSubmit={handleFetchDropbox}>
-            <input
-              type="text"
-              placeholder="Folder Name"
-              value={folderPath}
-              onChange={(e) => setFolderPath(e.target.value)}
-              required
-            />
-
-            {loading ? (
-              <span>
-                <FallingLines
-                  color="#4fa94d"
-                  width="100"
-                  visible={true}
-                  ariaLabel="falling-circles-loading"
-                />
-              </span>
-            ) : (
-              <button type="submit" className="fetch-button mrgnbtm-2">
-                <span>Fetch Dropbox Album</span>
-              </button>
-            )}
-          </form>
-        </div>
+        <button type="button" onClick={openDropboxChooser}>
+          Select Dropbox Folder
+        </button>
 
         <form onSubmit={handleSubmit} className="album-form">
           <div className="form-group">
@@ -195,37 +249,43 @@ const AlbumUpload = () => {
           </div>
 
           <button type="submit" className="fetch-button">
-            <span>Upload Album</span>
+            Upload Album
           </button>
         </form>
       </div>
 
+      {/* 🔹 Preview */}
       <div className="dropboxpictures_container">
         {assets ? (
           <>
             <p className="selecteddropbox_head">
-              Plese choose Dropbox Folder to fetch Images
+              Please select images from Dropbox
             </p>
-
-            <InfinitySpin
-              visible={true}
-              width="200"
-              color="#4fa94d"
-              ariaLabel="infinity-spin-loading"
-            />
+            {loading && (
+              <InfinitySpin
+                visible={true}
+                width="200"
+                color="#4fa94d"
+                ariaLabel="infinity-spin-loading"
+              />
+            )}
           </>
         ) : (
           <>
             <p className="selecteddropbox_head">
-              Selected Dropbox Album Images
+              Selected Dropbox Images ({dropboxImages.length})
             </p>
             <div className="dropboxpictures_container_items">
-              {dropboxImages.map((urlpic) => (
-                <div className="dropboxpictures_container_item" key={urlpic}>
+              {dropboxImages.map((url, index) => (
+                <div className="dropboxpictures_container_item" key={index}>
                   <img
-                    src={urlpic}
-                    alt=""
+                    src={url}
+                    alt={`Selected ${index + 1}`}
                     className="dropboxpictures_container_item_pic"
+                    onError={(e) => {
+                      e.target.src =
+                        "https://via.placeholder.com/150?text=Image+Error";
+                    }}
                   />
                 </div>
               ))}

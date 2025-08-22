@@ -13,6 +13,7 @@ import Abumlist from "./components/admin/Album/Abumlist";
 import Albumshow from "./components/Pages/Albums/Albumshow";
 import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
 import Artistdetail from "./components/artist/Artistdetail";
+import NewArtist from "./components/NewArtist/NewArtist";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/artist" element={<Artist />} />
+          <Route path="/newartist" element={<NewArtist />} />
         <Route path="/artist/details" element={<Artistdetail />} />
 
         <Route path="/collab" element={<Collaborations />} />
