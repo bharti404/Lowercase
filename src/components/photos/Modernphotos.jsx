@@ -29,7 +29,7 @@ const Modernphotos = () => {
     fetchData();
   }, [baseUrl]);
 
-  const limitedAlbums = albums.slice(0, 6);
+  // const limitedAlbums = albums.slice(0, 6);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;

@@ -78,36 +78,36 @@ const AlbumUpload = () => {
 
 
 
-  const handleFolderUpload = async (e) => {
-    const files = e.target.files;
-    if (!files || files.length === 0) return;
+  // const handleFolderUpload = async (e) => {
+  //   const files = e.target.files;
+  //   if (!files || files.length === 0) return;
 
-    setLoading(true);
-    try {
-      const formData = new FormData();
-      Array.from(files).forEach((file) => {
-        formData.append("files", file);
-      });
-      formData.append("albumTitle", title || "untitled_album");
+  //   setLoading(true);
+  //   try {
+  //     const formData = new FormData();
+  //     Array.from(files).forEach((file) => {
+  //       formData.append("files", file);
+  //     });
+  //     formData.append("albumTitle", title || "untitled_album");
 
-      // Your backend should handle uploading to Dropbox with its SDK
-      const res = await axios.post(
-        `${baseUrl}/api/dropbox/folder-upload`,
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+   
+  //     const res = await axios.post(
+  //       `${baseUrl}/api/dropbox/folder-upload`,
+  //       formData,
+  //       {
+  //         headers: { "Content-Type": "multipart/form-data" },
+  //       }
+  //     );
 
-      setDropboxImages(res.data.links); // backend should return uploaded Dropbox links
-      setAssets(false);
-      alert("Folder uploaded successfully!");
-    } catch (error) {
-      console.error("Error uploading folder:", error);
-      alert("Error uploading folder. Check console.");
-    }
-    setLoading(false);
-  };
+  //     setDropboxImages(res.data.links); 
+  //     setAssets(false);
+  //     alert("Folder uploaded successfully!");
+  //   } catch (error) {
+  //     console.error("Error uploading folder:", error);
+  //     alert("Error uploading folder. Check console.");
+  //   }
+  //   setLoading(false);
+  // };
 
   // 🔹 Submit album metadata
   const handleSubmit = async (e) => {

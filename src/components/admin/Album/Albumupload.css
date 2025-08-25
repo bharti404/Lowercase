@@ -234,3 +234,7 @@ cursor: pointer;
     background-position-x: 100%;
     transform: scale(1.1);
   }
+
+  label{
+    color: #000;
+  }

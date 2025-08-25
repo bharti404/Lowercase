@@ -1,4 +1,4 @@
-/* AdminLayout.css */
+/* 
 .admin-layout {
   display: flex;
   background: linear-gradient(90deg, #000, #424242);
@@ -98,20 +98,90 @@
 
 .topbox,
 .btmbox {
-  display: none; /* Hide by default */
+  display: none; 
 }
 
 .active .topbox,
 .active .btmbox {
-  display: block; /* Show when active */
+  display: block; 
 }
 
-/* Apply hover effect for active items */
+
 .active a::after {
-  transform: translateX(-15%) !important; /* Always apply the hover effect */
+  transform: translateX(-15%) !important; 
   
 }
 
 .active a::before {
-  transform: translateX(15%) !important; /* Always apply the hover effect */
+  transform: translateX(15%) !important; 
+} */
+
+
+
+/* AdminLayout.css */
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  min-height: 100vh;
 }
+
+.top-navbar {
+  background: linear-gradient(90deg, #424242, #424242);
+  padding: 1.5rem 6rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.top-navbar nav ul li {
+  position: relative;
+}
+
+.top-navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.top-navbar nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #0575e6, #d4145a);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+  border-radius: 2px;
+}
+
+.top-navbar nav ul li a:hover::before,
+.top-navbar nav ul li.active a::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #1e1e1e;
+  color: #fff;
+}
+

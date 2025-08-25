@@ -3,13 +3,13 @@ import "./Artistdetail.css";
 import Navbartoplogo from "../navbar/Navbartoplogo";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
-import Drake from '../assests/Artists/drake.jpeg';
+
 import { useParams } from "react-router-dom";
 import artistData from "../../data/ArtistData";
 
 const Artistdetail = (props) => {
 
-  const ArtistName = props.name;
+
    const {id}= useParams();
     const artist = artistData.find((a) => a.id === parseInt(id));
     if(!artist){

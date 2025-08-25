@@ -1,6 +1,6 @@
 import React from "react";
 import "./EventAlbums.css";
-import { Link } from "react-router-dom";
+
 import event1 from "../assests/event.jpg"
 
 const eventData = [

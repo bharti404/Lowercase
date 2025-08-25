@@ -23,7 +23,7 @@ export default function PhotoWall() {
 
     const FetchAlbumById = async () => {
       const response = await axios.get(`${BaseUrl}/api/album/get/6733c1b1df07ccf2838503d7`);
-      console.log("The response from backend:", response.data.data .photos);
+      console.log("The response from backend:", response.data.data.photos);
     
       setImageList( response.data?.data.photos)
 
