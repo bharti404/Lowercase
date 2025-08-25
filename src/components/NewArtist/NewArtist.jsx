@@ -5,6 +5,7 @@ import Navbartoplogo from "../navbar/Navbartoplogo";
 import Footer from "../footer/Footer";
 import Prefooter from "../footer/Prefooter";
 import NewArtiststylescards from "../homepage/NewArtiststylescards";
+import artistData from "../../data/ArtistData";
 
 const ArtistNames = [
   `DRAKE, A BOOGIE WIT THA HOODIE, GUNNA, KELHANI, PARTYNEXTDOOR, 6LACK, BRYSON TILLER, LIL TJAY,DON TOLIVER, AND TORY LANEZ, D BLOCK EUROPE, M HUNCHO, NAFE SMALLZ, `,
@@ -14,6 +15,8 @@ const ArtistNames = [
  CULTURE SHOCK, BASSIC, GEORGIE RIOT, DOM WHITING EMILY MAKIS, CHARLOTTE PLANK, MR TRAUMATIK, FERRY CORSTEN, BASSHUNTER, DARKZY, WINDOW KID, MY NU LENG, SAMMY VIRJI, SKREAM, REDLIGHT, JACK FOWLER, NATHAN DAWE, SHIFT K3Y, DEEPER PURPOSE, CHRIS LORENZO, ANNIE MAC, SECONDCITY, DENIS SULTA, PATRICK TOPPING, HOT SINCE 82, EWAN MCVICAR, SOLARDO, BEN HEMSLEY, GORGON CITY, PAWSA, SWITCH DISCO, AND ALAN FITZPATRICK, ARTFUL DODGER, DJ LUCK AND MC NEAT DJ PIED PIPER, OXIDE & NEUTRINO, MATT JAM LAMONT MAJESTIC SWEET FEMALE ATTITUDE, MC DT, MONSTA BOY, STICKY, DJ CARTIER, SMOKEY BUBBLIN' B, AND HEARTLESS CREW DJ PIONEER DAVID RODIGAN, PRINCE FATTY, HORSEMEN, TROJAN SOUND SYSTEM, AND GENERAL LEVY, ZANE LOWE, JAGUAR SKILLS, THE DIXON BROTHERS, RICKIE AND MELVIN, IAMPJAY, CHARLIE SLOTH, KENNY ALLSTAR, DJ ACE, DJ SEMTEX, DJ LIMELIGHT, DJ SIMZ, , STEEL BANGLEZ.`,
 ];
 const artistName =["jiya" , "dfikj" ,"dfghj" , "monkia" , "bharti" , "arti"]
+
+
 const NewArtist = () => {
   return (
     <>
@@ -26,14 +29,23 @@ const NewArtist = () => {
       
     </div>
 
-      <div className="artistProfile"> 
+
+       <div className="artistProfile"> 
+         {
+          artistData.map((cur,index)=>(
+            <NewArtiststylescards data ={cur} />
+          ))
+         }
+      </div>
+
+      {/* <div className="artistProfile"> 
         <NewArtiststylescards/>
         <NewArtiststylescards/>
         <NewArtiststylescards/>
         <NewArtiststylescards/>
          <NewArtiststylescards/>
           <NewArtiststylescards/>
-      </div>
+      </div> */}
 
       
 

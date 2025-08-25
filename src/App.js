@@ -24,7 +24,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/artist" element={<Artist />} />
           <Route path="/newartist" element={<NewArtist />} />
-        <Route path="/artist/details" element={<Artistdetail />} />
+        {/* <Route path="/artist/details" element={<Artistdetail />} /> */}
+         <Route path="/artist/:id" element={<Artistdetail />} />
 
         <Route path="/collab" element={<Collaborations />} />
         <Route path="/photos" element={<Photos />} />

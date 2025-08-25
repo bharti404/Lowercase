@@ -3,11 +3,14 @@
 .breadcrumb_top{
 
     margin-top: 25vh;
+ 
 }
 
 .breadcribm_txt{
 
     color: #fff;
+     padding: 0 12px;
+    
 }
 
 .artist_detail_sect{
@@ -16,6 +19,7 @@
     align-items: stretch;
     justify-content:space-between ;
     width: 100vw;
+   padding: 0 12px;
     
 }
 
@@ -54,6 +58,7 @@
 
     width: 90vw;
     margin: 25px auto;
+   
 }
 
 

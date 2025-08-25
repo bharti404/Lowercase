@@ -3,11 +3,19 @@ import "./Artistdetail.css";
 import Navbartoplogo from "../navbar/Navbartoplogo";
 import Prefooter from "../footer/Prefooter";
 import Footer from "../footer/Footer";
-import Drake from '../assests/Artists/drake.jpeg'
+import Drake from '../assests/Artists/drake.jpeg';
+import { useParams } from "react-router-dom";
+import artistData from "../../data/ArtistData";
 
 const Artistdetail = (props) => {
 
   const ArtistName = props.name;
+   const {id}= useParams();
+    const artist = artistData.find((a) => a.id === parseInt(id));
+    if(!artist){
+      return <h1>hey</h1>
+    }
+
 
   return (
 
@@ -15,18 +23,23 @@ const Artistdetail = (props) => {
       <Navbartoplogo />
 
       <div className="breadcrumb_top">
-        <p className="breadcribm_txt">
-          LOWERCASE EVENTS/ <span>{`${ArtistName}`}</span>
+       
+         <p className="breadcribm_txt">
+          LOWERCASE EVENTS/ <span>{`${artist.name}`}</span>
         </p>
       </div>
 
       <div className="artist_detail_sect">
         <div className="artist_detail_sect_pic">
-          <img src={Drake} alt="" />
+          <img src={artist.image} alt="" />
         </div>
 
         <div className="artist_detail_sect_cont">
-          <p>
+        
+<p>{artist.description}
+</p>
+          
+          {/* <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, culpa
             mollitia natus commodi unde excepturi velit, eligendi dolores
             recusandae et exercitationem ea libero magnam in, aspernatur
@@ -51,9 +64,9 @@ const Artistdetail = (props) => {
             iste atque provident. Nostrum mollitia, nulla repellendus velit cum
             tempora suscipit accusantium iusto possimus, tenetur debitis a aut,
             nobis corrupti pariatur?
-          </p>
+          </p> */}
 
-          <p>
+          {/* <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, culpa
             mollitia natus commodi unde excepturi velit, eligendi dolores
             recusandae et exercitationem ea libero magnam in, aspernatur
@@ -78,7 +91,7 @@ const Artistdetail = (props) => {
             iste atque provident. Nostrum mollitia, nulla repellendus velit cum
             tempora suscipit accusantium iusto possimus, tenetur debitis a aut,
             nobis corrupti pariatur?
-          </p>
+          </p> */}
         </div>
       </div>
 
