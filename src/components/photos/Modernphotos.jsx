@@ -10,6 +10,7 @@ const Modernphotos = () => {
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
   console.log("Base URL:", baseUrl);
+  console.log(albums)
 
   useEffect(() => {
     const fetchData = async () => {

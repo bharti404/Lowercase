@@ -32,6 +32,7 @@ export default function PhotoWall() {
 
     useEffect(()=>{
        FetchAlbumById()  
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     } ,[])
 
 //   const imageList = [

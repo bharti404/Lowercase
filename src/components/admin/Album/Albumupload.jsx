@@ -31,6 +31,7 @@ const AlbumUpload = () => {
        
         const folder = files[0];
         console.log("Selected folder:", folder);
+        console.log(selectedFolder)
         
         // Store the folder info in state
         setSelectedFolder(folder);

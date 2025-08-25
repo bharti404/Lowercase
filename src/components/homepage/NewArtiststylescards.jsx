@@ -144,7 +144,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 const NewArtiststylescards = ({data})=>{
     return(
     <Link className='image-box' to={`/artist/${data.id}`}>
-    <img src ={data.image}alt="image"/>
+    <img src ={data.image} alt="bbb"/>
     <div className='image-box-content'>
           <h1 className='artist-name'>{data.name}</h1>
     <button  className='image-box-btn'> Learn More <span> <FaLongArrowAltRight /></span></button>
