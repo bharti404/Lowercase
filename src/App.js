@@ -40,6 +40,7 @@ function App() {
         {/* <Route path="/admin" element={<AlbumUpload />} /> */}
 
         <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Abumlist />} /> 
           <Route path="albumlist" element={<Abumlist />} />
           <Route path="albumupload" element={<AlbumUpload />} />
           {/* <Route path="settings" element={<Settings />} /> */}

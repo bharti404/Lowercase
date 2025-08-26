@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Albumupload.css";
 import { InfinitySpin } from "react-loader-spinner";
+import { RxUpload } from "react-icons/rx";
 
 const AlbumUpload = () => {
   const [title, setTitle] = useState("");
@@ -174,10 +175,10 @@ const AlbumUpload = () => {
   return (
     <div className="album-upload-container">
       <div className="album-upload">
-        <h2>Upload Album</h2>
+        <h2 className="album-heading">Upload New Album</h2>
 
-        <button type="button" onClick={openDropboxChooser}>
-          Select Dropbox Folder
+        <button type="button" onClick={openDropboxChooser} className="dropbox-button">
+           <span ><RxUpload className="dropbox-icon" /></span>Select Dropbox Folder
         </button>
 
         <form onSubmit={handleSubmit} className="album-form">
@@ -256,7 +257,44 @@ const AlbumUpload = () => {
       </div>
 
       {/* 🔹 Preview */}
-      <div className="dropboxpictures_container">
+
+
+      {/* 🔹 Show/Hide the whole box */}
+{loading || !assets ? (
+  <div className="dropboxpictures_container">
+    {loading ? (
+      <InfinitySpin
+        visible={true}
+        width="200"
+        color="#4fa94d"
+        ariaLabel="infinity-spin-loading"
+      />
+    ) : (
+      <>
+        <p className="selecteddropbox_head">
+          Selected Dropbox Images ({dropboxImages.length})
+        </p>
+        <div className="dropboxpictures_container_items">
+          {dropboxImages.map((url, index) => (
+            <div className="dropboxpictures_container_item" key={index}>
+              <img
+                src={url}
+                alt={`Selected ${index + 1}`}
+                className="dropboxpictures_container_item_pic"
+                onError={(e) => {
+                  e.target.src =
+                    "https://via.placeholder.com/150?text=Image+Error";
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+) : null}
+
+      {/* <div  className={`dropboxpictures_container ${assets ? "visable" : ""}`}>
         {assets ? (
           <>
             <p className="selecteddropbox_head">
@@ -293,7 +331,7 @@ const AlbumUpload = () => {
             </div>
           </>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,125 +1,5 @@
-/* 
-.admin-layout {
-  display: flex;
-  background: linear-gradient(90deg, #000, #424242);
-}
 
-.sidebar {
-  width: 15%;
-  color: white;
-  padding: 20px;
-  height: 100vh;
-  background-color: #2c3e50;
-}
-
-.main-content {
-  width: 85vw;
-  padding: 20px;
-}
-
-.sidebar nav ul {
-  list-style: none !important;
-}
-
-.sidebar nav ul li {
-  margin: 30px 0;
-  position: relative;
-}
-
-.sidebar ul li a {
-  width: 200px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 1em;
-  background: rgb(43, 43, 43);
-  position: relative;
-  color: white;
-  border-radius: 5px;
-  z-index: 10;
-  text-decoration: none;
-}
-
-.sidebar ul li a::before,
-.sidebar ul li a::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border-radius: 5px;
-  width: 105%;
-  transition: all 0.4s;
-}
-
-.sidebar ul li a::before {
-  left: 0%;
-  height: 130%;
-  background: linear-gradient(to right, #D4145A, #000);
-}
-
-.sidebar ul li a::after {
-  left: -10%;
-  height: 120%;
-  background: #ffffff56;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
-}
-
-.sidebar ul li a:hover::before {
-  transform: translateX(15%);
-  background: linear-gradient(to right, #0575e6, #D4145A, #000);
-}
-
-.sidebar ul li a:hover::after {
-  transform: translateX(-15%);
-
-}
-
-.btmbox {
-  height: 20px;
-  width: 30px;
-  z-index: 10;
-  position: absolute;
-  background: linear-gradient(to right, #2A0812, #000);
-  right: -20px;
-  border-bottom-left-radius: 20px;
-}
-
-.topbox {
-  height: 20px;
-  width: 30px;
-  z-index: 12;
-  position: absolute;
-  background: linear-gradient(to right, #2A0812, #000);
-  right: -20px;
-  top: -15px;
-  border-top-left-radius: 20px;
-}
-
-.topbox,
-.btmbox {
-  display: none; 
-}
-
-.active .topbox,
-.active .btmbox {
-  display: block; 
-}
-
-
-.active a::after {
-  transform: translateX(-15%) !important; 
-  
-}
-
-.active a::before {
-  transform: translateX(15%) !important; 
-} */
-
-
-
-/* AdminLayout.css */
-.admin-layout {
+/* .admin-layout {
   display: flex;
   flex-direction: column;
   background: #111;
@@ -184,4 +64,73 @@
   background: #1e1e1e;
   color: #fff;
 }
+ */
 
+
+ .admin-layout {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  min-height: 100vh;
+}
+
+.top-navbar {
+  background: linear-gradient(90deg, #424242, #424242);
+  padding: 1.5rem 6rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.top-navbar nav ul li {
+  position: relative;
+}
+
+.top-navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+/* underline effect */
+.top-navbar nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #0575e6, #d4145a);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+  border-radius: 2px;
+}
+
+/* hover + active both show underline */
+.top-navbar nav ul li a:hover::before,
+.top-navbar nav ul li a.active::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #1e1e1e;
+  color: #fff;
+}

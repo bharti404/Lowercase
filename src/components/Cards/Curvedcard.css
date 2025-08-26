@@ -8,7 +8,8 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 00 00 100px 00;
+    gap:55px
+    /* margin: 00 00 100px 00; */
 
 }
 
