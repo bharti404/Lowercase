@@ -34,10 +34,9 @@ const AlbumUpload = () => {
         console.log("Selected folder:", folder);
         console.log(selectedFolder)
         
-        // Store the folder info in state
         setSelectedFolder(folder);
         
-        // Automatically fetch images from this folder
+        
         handleFetchDropboxFolder(folder);
       },
       cancel: function () {
@@ -45,13 +44,13 @@ const AlbumUpload = () => {
       },
       linkType: "preview",
       multiselect: false,
-      folderselect: true, // Enable folder selection
+      folderselect: true, 
     };
 
     window.Dropbox.choose(options);
   };
 
-  // Function to fetch images from the selected folder
+
  const handleFetchDropboxFolder = async (folderPath) => {
     if (!folderPath) {
       alert("No folder path available.");
@@ -60,12 +59,11 @@ const AlbumUpload = () => {
 
     setLoading(true);
     try {
-      // Use your existing endpoint with the folder path
+   
       const response = await axios.get(
         `${baseUrl}/api/drropbox/fetch-files?path=/${folderPath}`
       );
-      
-      // Adjust this based on your actual API response structure
+
       const images = response.data.AllImages || response.data.images || [];
       
       setDropboxImages(images);
@@ -240,7 +238,7 @@ const AlbumUpload = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group cover-photo">
             <label>Cover Photo:</label>
             <input
               type="file"
@@ -337,3 +335,6 @@ const AlbumUpload = () => {
 };
 
 export default AlbumUpload;
+
+
+
