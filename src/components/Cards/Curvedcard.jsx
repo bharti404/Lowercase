@@ -20,7 +20,7 @@ import axios from "axios";
 import "./Curvedcard.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { MdEdit } from "react-icons/md";
+
 
 const Curvedcard = (props) => {
   const [admin, setAdmin] = useState(false);
@@ -91,6 +91,7 @@ const Curvedcard = (props) => {
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
+      console.log(res)
       alert("Album updated successfully");
       setOpen(false);
     } catch (err) {
