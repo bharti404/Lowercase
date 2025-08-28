@@ -46,7 +46,7 @@
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import './Adminlayout.css';
-import { Link ,NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const AdminLayout = () => {
 
