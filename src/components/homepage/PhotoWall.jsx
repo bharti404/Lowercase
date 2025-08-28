@@ -22,7 +22,7 @@ export default function PhotoWall() {
   const [imageList, setImageList] = useState([]);
     const [loading, setLoading] = useState(true); 
   
-const [imagesLoaded, setImagesLoaded] = useState(0);
+// const [imagesLoaded, setImagesLoaded] = useState(0);
   const BaseUrl = process.env.REACT_APP_BASE_URL;
 
   // const FetchAlbumById = async () => {
