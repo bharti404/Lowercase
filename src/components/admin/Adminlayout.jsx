@@ -52,7 +52,7 @@ const AdminLayout = () => {
 
   const location = useLocation();
   
-  const isActive = (path) => location.pathname === path;
+  // const isActive = (path) => location.pathname === path;
 
   return (
    // AdminLayout.jsx

@@ -17,11 +17,15 @@ import Modernphotos from "../photos/Modernphotos";
 import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
 import BrandCreator from "./BrandCreator";
 import PhotoWall from "./PhotoWall";
+import PhotoWallSkeleton from "./PhotoWallSkeleton";
+import { lazy , Suspense } from "react";
 
 
 
 // import Supportinghome from "./Supportinghome";
 // import Instagidphotos from "../photos/Instagidphotos";
+
+
 
 const Homepage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -120,7 +124,10 @@ const Homepage = () => {
 
       <EventAlbums />
 
+    
       <PhotoWall/>
+      
+      
 
       <BrandCreator />
 

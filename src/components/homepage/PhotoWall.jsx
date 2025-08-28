@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import Draggable from "gsap/Draggable";
 import "./PhotoWall.css";
 import axios from "axios";
+import PhotoWallSkeleton from "./PhotoWallSkeleton";
 gsap.registerPlugin(Draggable);
 
 export default function PhotoWall() {
@@ -13,26 +14,70 @@ export default function PhotoWall() {
   const thumbRef = useRef(null);
   const draggableRef = useRef(null);
 
+
   const startXRef = useRef(0);
   const dragStartRotationRef = useRef(0);
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageList, setImageList] = useState([]);
+    const [loading, setLoading] = useState(true); 
+  
+const [imagesLoaded, setImagesLoaded] = useState(0);
   const BaseUrl = process.env.REACT_APP_BASE_URL;
 
-  const FetchAlbumById = async () => {
+  // const FetchAlbumById = async () => {
+  //   const response = await axios.get(
+  //     `${BaseUrl}/api/album/get/6733c1b1df07ccf2838503d7`
+  //   );
+  //   console.log("The response from backend:", response.data.data.photos);
+
+  //   setImageList(response.data?.data.photos);
+  // };
+
+
+const FetchAlbumById = async () => {
+  try {
     const response = await axios.get(
       `${BaseUrl}/api/album/get/6733c1b1df07ccf2838503d7`
     );
-    console.log("The response from backend:", response.data.data.photos);
+    const photos = response.data?.data.photos || [];
+    console.log("bharti" , photos)
+    setImageList(photos)
+      
+  } catch (error) {
+    console.error("Error fetching album:", error);
+  }
+};
 
-    setImageList(response.data?.data.photos);
-  };
+
+useEffect(() => {
+  if (imageList.length > 0) {
+    let loaded = 0;
+    imageList.forEach((img) => {
+      const image = new Image();
+      image.src = img.url;
+      image.onload = () => {
+        loaded++;
+        if (loaded === imageList.length) {
+          setLoading(false); // ✅ only after ALL done
+        }
+      };
+      image.onerror = () => {
+        loaded++;
+        if (loaded === imageList.length) {
+          setLoading(false);
+        }
+      };
+    });
+  }
+}, [imageList]);
 
   useEffect(() => {
     FetchAlbumById();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+ 
 
 
   // layout
@@ -194,6 +239,10 @@ export default function PhotoWall() {
     }
   };
 
+    if (loading) {
+    return <PhotoWallSkeleton />;
+  }
+
   return (
     <div className="wall-wrapper" onClick={handleOutsideClick}>
       <div className="cylinder-blur-mask"></div>
@@ -211,6 +260,7 @@ export default function PhotoWall() {
             }}
           />
         ))}
+       
       </div>
       {selectedImage && (
         <>
