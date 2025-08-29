@@ -81,8 +81,8 @@ useEffect(() => {
 
 
   // layout
-  const rows = 5;
-  const cols = 30;
+  const rows =4;
+  const cols = 18;
   const radius = 500;
 
   const columnGapDeg = 360 / cols;
