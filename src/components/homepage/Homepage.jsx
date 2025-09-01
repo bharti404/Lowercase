@@ -17,8 +17,8 @@ import Modernphotos from "../photos/Modernphotos";
 import Lowercaseticketwidget from "../LowercaseTicket/Lowercaseticketwidget";
 import BrandCreator from "./BrandCreator";
 import PhotoWall from "./PhotoWall";
-import PhotoWallSkeleton from "./PhotoWallSkeleton";
-import { lazy , Suspense } from "react";
+// import PhotoWallSkeleton from "./PhotoWallSkeleton";
+// import { lazy , Suspense } from "react";
 
 
 
@@ -126,6 +126,7 @@ const Homepage = () => {
 
     
       <PhotoWall/>
+      
       
       
 
