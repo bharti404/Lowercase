@@ -566,6 +566,8 @@ export default function PhotoWall() {
 
   const BaseUrl = process.env.REACT_APP_BASE_URL;
 
+  console.log(isLoading)
+
   useEffect(() => {
     const FetchAlbumById = async () => {
       try {
