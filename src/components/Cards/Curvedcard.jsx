@@ -103,51 +103,63 @@ const Curvedcard = (props) => {
   return (
     <div className="card_album_section">
       {Albums?.map((album) => (
-        <Card key={album._id} className="curvedcard_cutsom">
-          <CardActionArea onClick={() => SendToPhotobyAlbum(album)}>
-            <CardMedia
-              component="img"
-              height="180"
-              image={album.coverPhoto}
-              alt={album.title}
-            />
-            <CardContent>
-              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                <Typography gutterBottom variant="h5">
-                  <strong>Title:</strong> {album.title}
-                </Typography>
-                <TbEdit
-                  style={{ fontSize: "22px", color: "#2075caff" }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleEdit(album);
-                  }}
-                />
-              </Box>
-              <Typography variant="body2">
-                <strong>Date:</strong> {album.date}
-              </Typography>
-              <Typography variant="body2">
-                <strong>Club:</strong> {album.club}
-              </Typography>
-              <Typography variant="body2">
-                <strong>Venue:</strong> {album.venue}
-              </Typography>
-              <Typography variant="body2">
-                <strong>Event:</strong> {album.eventName}
-              </Typography>
-              <Typography variant="body2">
-                <strong>Total Photos:</strong> {album.photos.length}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          {admin && (
-            <CardActions>
-              <Button onClick={() => handleEdit(album)}>Edit</Button>
-              <Button color="error">Delete</Button>
-            </CardActions>
-          )}
-        </Card>
+      <Card key={album._id} className="curvedcard_custom" sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+  <CardActionArea onClick={() => SendToPhotobyAlbum(album)} sx={{ flexGrow: 1 }}>
+    <CardMedia
+      component="img"
+      height="140"
+      image={album.coverPhoto}
+      alt={album.title}
+      sx={{ objectFit: 'cover' }}
+    />
+    <CardContent sx={{ p: 1.5, flexGrow: 1 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", mb: 0.5 }}>
+        <Typography variant="h6" component="h3" sx={{ 
+          fontWeight: 'bold', 
+          fontSize: '1rem',
+          lineHeight: 1.3,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          display: '-webkit-box',
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: 'vertical'
+        }}>
+          {album.title}
+        </Typography>
+        <TbEdit
+          style={{ fontSize: "18px", color: "#2075caff", flexShrink: 0, marginLeft: '8px' }}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleEdit(album);
+          }}
+        />
+      </Box>
+      
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '0.25rem 0.5rem', mt: 1 }}>
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>Date:</Typography>
+        <Typography variant="caption">{album.date}</Typography>
+        
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>Club:</Typography>
+        <Typography variant="caption">{album.club}</Typography>
+        
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>Venue:</Typography>
+        <Typography variant="caption">{album.venue}</Typography>
+        
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>Event:</Typography>
+        <Typography variant="caption">{album.eventName}</Typography>
+        
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>Photos:</Typography>
+        <Typography variant="caption">{album.photos.length}</Typography>
+      </Box>
+    </CardContent>
+  </CardActionArea>
+  {admin && (
+    <CardActions sx={{ p: 1, pt: 0 }}>
+      <Button size="small" onClick={() => handleEdit(album)}>Edit</Button>
+      <Button size="small" color="error">Delete</Button>
+    </CardActions>
+  )}
+</Card>
       ))}
 
       {/* 🔹 Edit Modal */}

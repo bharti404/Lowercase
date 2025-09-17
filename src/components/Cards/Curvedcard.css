@@ -1,65 +1,46 @@
-
-
-
-
-.card_album_section{
-
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap:55px
-    /* margin: 00 00 100px 00; */
-
-}
-
-
-.curvedcard_cutsom{
-
-
-    /* Apply your box-shadow styles, which inherit the round .wrapper shape */
-    box-shadow: 0px 10px 30px #444444 !important;
-    /* border: 1px solid red; */
-
-}
-
-
-.curvedcard_cutsom:hover{
-
-
-    box-shadow: 0px 10px 100px #444444 !important;
-
-
-}
-
-
-.card_album_section strong{
-
-    margin: 00  5px 00 00;
-}
-
-.file-upload-btn {
-  background: linear-gradient(135deg, #8e14d4 0%, #1576d6 100%);
-  background-size: 200%;
-  border: none;
+.card_album_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  justify-items: center;
+  gap: 16px;
   
+}
+
+.compact-card {
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+}
+
+.compact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card_album_section {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .card_album_section {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card_album_section {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
   
-   padding: 10px;
-  border-radius: 6px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 0.75rem 1.5rem;
-  margin-right: 12px;
-  cursor: pointer;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  display: inline-block;
+  .compact-card {
+    width: auto !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
-
-.file-upload-btn:hover {
-  background-position: right center;
-  transform: translateY(-2px);
-}
-

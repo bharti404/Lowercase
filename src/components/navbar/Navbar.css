@@ -24,11 +24,11 @@
 }
 
 .navbar-bar {
-    width: 40%;
+    width: 50%;
     display: flex;
     
     justify-content: space-around;
-    /* border: 2px solid red; */
+   
 
     margin: 00 00 00 00;
     

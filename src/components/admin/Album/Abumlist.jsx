@@ -15,7 +15,9 @@ const Abumlist = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${baseUrl}/api/album/getall`);
-        setData(response.data); // Adjust this to match the data structure returned by the API
+        setData(response.data); 
+        console.log("list")
+        // Adjust this to match the data structure returned by the API
         setLoading(false);
       } catch (error) {
         setError(error);

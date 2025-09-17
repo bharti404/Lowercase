@@ -70,12 +70,14 @@
  .admin-layout {
   display: flex;
   flex-direction: column;
-  background: #111;
+  /* background: #111; */
+    /* background-color: #121212; */
   min-height: 100vh;
 }
 
 .top-navbar {
-  background: linear-gradient(90deg, #424242, #424242);
+  background: #1f0b20 ;
+  /* background: linear-gradient(90deg, #424242, #424242); */
   padding: 1.5rem 6rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
   position: sticky;
@@ -131,6 +133,8 @@
 .main-content {
   flex: 1;
   padding: 20px;
-  background: #1e1e1e;
-  color: #fff;
+  /* background: #1e1e1e; */
+
+   background:#ececec;
+  color: #fcf9f9;
 }
