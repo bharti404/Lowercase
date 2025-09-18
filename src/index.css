@@ -1,13 +1,37 @@
+@font-face {
+  font-family: 'Degular';
+  src: url('../public/fonts/DegularDemo-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('../public/fonts/DegularDemo-Semibold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Degular';
+  src: url('../public/fonts/DegularDemo-Medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
 body {
   margin: 0;
-  font-family: Helvetica;
+  font-family:  "Degular",Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "Degular" ,source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 

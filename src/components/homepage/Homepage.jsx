@@ -122,7 +122,7 @@ const Homepage = () => {
 
       {/* <Instagidphotos /> */}
 
-      <EventAlbums />
+      {/* <EventAlbums /> */}
 
     
       <PhotoWall/>

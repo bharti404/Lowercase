@@ -8,23 +8,18 @@ import { useParams } from "react-router-dom";
 import artistData from "../../data/ArtistData";
 
 const Artistdetail = (props) => {
-
-
-   const {id}= useParams();
-    const artist = artistData.find((a) => a.id === parseInt(id));
-    if(!artist){
-      return <h1>hey</h1>
-    }
-
+  const { id } = useParams();
+  const artist = artistData.find((a) => a.id === parseInt(id));
+  if (!artist) {
+    return <h1>hey</h1>;
+  }
 
   return (
-
     <div>
       <Navbartoplogo />
 
       <div className="breadcrumb_top">
-       
-         <p className="breadcribm_txt">
+        <p className="breadcribm_txt">
           LOWERCASE EVENTS/ <span>{`${artist.name}`}</span>
         </p>
       </div>
@@ -35,10 +30,8 @@ const Artistdetail = (props) => {
         </div>
 
         <div className="artist_detail_sect_cont">
-        
-<p>{artist.description}
-</p>
-          
+          <p>{artist.description}</p>
+
           {/* <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, culpa
             mollitia natus commodi unde excepturi velit, eligendi dolores
@@ -97,10 +90,18 @@ const Artistdetail = (props) => {
 
       <div className="artist_detail_vdo">
         {/* <video src=""></video> */}
-        
-        <iframe width="100%" height="600" src="https://www.youtube.com/embed/5FH534hKrs8?si=7VFdJIEZQc29OL3r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
 
+        <iframe
+          width="100%"
+          height="600"
+          src="https://www.youtube.com/embed/5FH534hKrs8?si=7VFdJIEZQc29OL3r"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
 
       <Prefooter />
       <Footer />

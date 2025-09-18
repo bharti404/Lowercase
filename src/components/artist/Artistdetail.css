@@ -2,7 +2,7 @@
 
 .breadcrumb_top{
 
-    margin-top: 25vh;
+    margin-top: 40vh;
  
 }
 
@@ -10,6 +10,10 @@
 
     color: #fff;
      padding: 0 12px;
+     font-size: 25px;
+     margin-bottom: 25px;
+     padding: 0 20px;
+        font-family: 'Degular', sans-serif;
     
 }
 
@@ -18,22 +22,22 @@
     display: flex;
     align-items: stretch;
     justify-content:space-between ;
-    width: 100vw;
-   padding: 0 12px;
+    width: 100%;
+   padding: 0 20px;
+   
+   gap:20px
     
 }
 
-
-.artist_detail_sect_pic {
-
-    width: 50vw;
-   
+.artist_detail_sect_pic,
+.artist_detail_sect_cont {
+  width: 50%;   /* <— make both equal */
 }
 
 .artist_detail_sect_pic img{
-    width: 50vw;
+    width: 100%;
     height: 100%;
-      margin: 10px 00;
+    object-fit: cover;
    
 }
 
@@ -43,15 +47,17 @@
 
     color: #fff;
     font-size: 16px;
-    font-weight: 600;
-    margin: 10px 00;
+    font-weight: 500;
+    line-height: 25px;
+     font-family: 'Degular', sans-serif;
+   
     
 }
 
 
 .artist_detail_sect_cont{
 
-    padding: 20px;
+ 
 }
 
 .artist_detail_vdo{

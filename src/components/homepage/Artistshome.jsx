@@ -10,7 +10,7 @@ const Artists = () => {
     <div className="home_artists_section">
       
       {/* 🔁 Marquee Section */}
-      <div className="marquee_wrapper">
+      {/* <div className="marquee_wrapper">
       {Array.from({ length: 16}).map((_, index) => (
         <div
           key={index}
@@ -23,7 +23,7 @@ const Artists = () => {
           </div>
         </div>
       ))}
-    </div>
+    </div> */}
 
       {/* Foreground Content */}
       <div className="home_artist_content">

@@ -14,6 +14,7 @@ import Albumshow from "./components/Pages/Albums/Albumshow";
 import Photobyalbum from "./components/Pages/Photos/Photobyalbum";
 import Artistdetail from "./components/artist/Artistdetail";
 import NewArtist from "./components/NewArtist/NewArtist";
+import Login from "./components/admin/Album/Login";
 
 function App() {
   return (
@@ -43,8 +44,11 @@ function App() {
           <Route index element={<Abumlist />} /> 
           <Route path="albumlist" element={<Abumlist />} />
           <Route path="albumupload" element={<AlbumUpload />} />
+          
+          
           {/* <Route path="settings" element={<Settings />} /> */}
         </Route>
+         <Route path="login" element={<Login/>} />
 
 
       </Routes>

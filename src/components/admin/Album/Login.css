@@ -1,0 +1,180 @@
+.form-container{
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    font-family: 'Degular', sans-serif;
+}
+
+.form-box{
+   
+    background-color: white;
+    padding-left: 60px ;
+    padding-right: 60px;
+    border-radius: 8px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    
+}
+
+.headingh2{
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+   
+  font-family: 'Degular', sans-serif;
+
+}
+
+.heading1{
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    
+  font-family: 'Degular', sans-serif;
+
+}
+
+.subtitle {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.sign-in-form{
+    
+    margin-top: 10px;
+}
+
+/* .contact-supar-admin{
+   
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   margin-top: 20px;
+   padding-top: 30px;
+} */
+
+
+.contact-super-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+.contact-super-admin h1 {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+.contact-super-admin button {
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid #111011;
+  color: #050505;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+.signbtn{
+    width: 100%;
+    padding-top:12px;
+    padding-bottom: 12px;
+    border-radius: 8px;
+    background-color: #000;
+    color: #aaa;
+    
+}
+
+
+ .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 20px 15px 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #333;
+            background: #fff;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        
+        .input-field:focus {
+            border-color: #070707;
+            box-shadow: 0 0 0 3px rgba(12, 12, 12, 0.2);
+        }
+        
+        .input-label {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            pointer-events: none;
+            transition: 0.3s ease all;
+        }
+        
+        .input-field:focus + .input-label,
+        .input-field:not(:placeholder-shown) + .input-label {
+            top: 12px;
+            font-size: 12px;
+            color: #0f0f0f;
+            font-weight: 600;
+        }
+        
+        .input-field::placeholder {
+            color: transparent;
+        }
+        
+        .icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 180px;
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f0f5ff;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            color: #6a11cb;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
