@@ -45,43 +45,67 @@
 //           </div>
 //         </form>
 
-
-//            <div className="contact-supar-admin"> 
+//            <div className="contact-supar-admin">
 //         <h1>Can't Login</h1>
 //         <button>Contact Supar Admin</button>
 //       </div>
 //       </div>
 
-   
 //     </div>
 //   );
 // };
 
 // export default Login;
 
-
-
 import { useState } from "react";
 import "./Login.css";
+import cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+
+//  const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
   });
+
+   const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Add your form submission logic here
+    try {
+      const response = await fetch(`https://lowercase-backend.onrender.com/api/admin/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert("Login Failed" + (errorData.message || "Something want Wrong"));
+        return;
+      }
+      const data = await response.json();
+      cookies.set("token", data.token, { expires: 1 });
+      cookies.set("role", data?.admin?.role, { expires: 1 });
+      if (data?.admin?.role === "admin" || data?.admin?.role === "superadmin") {
+        navigate("/admin");
+        alert("Login Successfully" + data.role);
+      } else if (data.role === "user") {
+        navigate("/");
+      }
+    } catch (err) {
+      alert("something want wrong" + err.message);
+    }
   };
 
   return (
@@ -90,7 +114,9 @@ const Login = () => {
         <div className="logo-container">
           <h2 className="headingh2">LowerCase</h2>
           <h1 className="heading1">Sign in</h1>
-          <p className="subtitle">Enter your credentials to access your account</p>
+          <p className="subtitle">
+            Enter your credentials to access your account
+          </p>
         </div>
 
         <form className="sign-in-form" onSubmit={handleSubmit}>
@@ -129,19 +155,15 @@ const Login = () => {
             </label>
             <i className="icon fas fa-lock"></i>
           </div>
-          
-         
 
           <div className="button-row">
-            <button type="submit" className="signbtn">Sign In</button>
+            <button type="submit" className="signbtn">
+              Sign In
+            </button>
           </div>
-          
-        
-          
-         
         </form>
 
-        <div className="contact-super-admin"> 
+        <div className="contact-super-admin">
           <h1>Can't Login?</h1>
           <button>Contact Super Admin</button>
         </div>

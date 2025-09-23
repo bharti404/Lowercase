@@ -1,4 +1,3 @@
-
 // import React from 'react';
 // import { Outlet, useLocation } from 'react-router-dom';
 // import './Adminlayout.css';
@@ -6,7 +5,7 @@
 // const AdminLayout = () => {
 
 //   const location = useLocation();
-  
+
 //   const isActive = (path) => location.pathname === path;
 
 //   return (
@@ -33,7 +32,7 @@
 //       </nav>
 //     </aside>
 //       <main className="main-content">
-//         <Outlet /> 
+//         <Outlet />
 //       </main>
 //     </div>
 //   );
@@ -41,24 +40,31 @@
 
 // export default AdminLayout;
 
-
-
-import React from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import './Adminlayout.css';
-import {  NavLink } from "react-router-dom";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import "./Adminlayout.css";
+import { NavLink , useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const AdminLayout = () => {
+  const navigate = useNavigate()
+  // const location = useLocation();
 
-  const location = useLocation();
-  
+  const handleLogout = () => {
+    Cookies.remove("token");
+    Cookies.remove("role");
+
+    navigate("/admin/login");
+    console.log("llogiut");
+  };
+
   // const isActive = (path) => location.pathname === path;
 
   return (
-   // AdminLayout.jsx
-<div className="admin-layout">
-  <header className="top-navbar">
-    {/* <nav>
+    // AdminLayout.jsx
+    <div className="admin-layout">
+      <header className="top-navbar">
+        {/* <nav>
       <ul>
         <li className={isActive('/admin/albumlist') ? 'active' : ''}>
           <a href="/admin/albumlist">All Albums</a>
@@ -76,30 +82,28 @@ const AdminLayout = () => {
       </ul>
     </nav> */}
 
+        <nav className="navbar-inner">
+          <ul className="nav-links">
+            <li>
+              <NavLink
+                to="/admin/albumlist"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                end
+              >
+                All Albums
+              </NavLink>
+            </li>
 
+            <li>
+              <NavLink
+                to="/admin/albumupload"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Upload Albums
+              </NavLink>
+            </li>
 
-<nav>
-  <ul>
-    <li>
-      <NavLink 
-        to="/admin/albumlist" 
-        className={({ isActive }) => (isActive ? "active" : "")}
-        end
-      >
-        All Albums
-      </NavLink>
-    </li>
-
-    <li>
-      <NavLink 
-        to="/admin/albumupload" 
-        className={({ isActive }) => (isActive ? "active" : "")}
-      >
-        Upload Albums
-      </NavLink>
-    </li>
-
-    {/* <li>
+            {/* <li>
       <NavLink 
         to="/admin/settings" 
         className={({ isActive }) => (isActive ? "active" : "")}
@@ -107,19 +111,19 @@ const AdminLayout = () => {
         Settings
       </NavLink>
     </li> */}
-  </ul>
-</nav>
+          </ul>
 
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
+        </nav>
+      </header>
 
-  </header>
-
-  <main className="main-content">
-    <Outlet /> 
-  </main>
-</div>
-
+      <main className="main-content">
+        <Outlet />
+      </main>
+    </div>
   );
 };
 
 export default AdminLayout;
-

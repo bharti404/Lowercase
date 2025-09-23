@@ -17,8 +17,8 @@ const Navbar = () => {
 
                     <Link  to='/events' className='navbar-items'>EVENTS</Link>
                     <Link  to='/photos' className='navbar-items'>PHOTOS ALBUMS</Link>
-                    <Link  to='/artist' className='navbar-items'>ARTISTS</Link>
-                      <Link  to='/newartist' className='navbar-items'>New-ARTISTS</Link>
+                    {/* <Link  to='/artist' className='navbar-items'>ARTISTS</Link> */}
+                      <Link  to='/newartist' className='navbar-items'>ARTISTS</Link>
                     {/* <Link  to='/collab' className='navbar-items'>BRANDS</Link> */}
                     {/* <Link  to='/' className='navbar-items'>CONTACT US</Link> */}
 
