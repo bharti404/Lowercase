@@ -1,0 +1,65 @@
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 16px;
+    margin: 00 00 150px 00;
+  }
+  
+  .photo-item {
+    position: relative;
+    padding-top: 100%; /* Makes it square */
+    overflow: hidden;
+  }
+  
+  .photo-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .photo-item .overlay_photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    transform: translateY(100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out;
+    /* z-index: 1000; */
+  }
+  
+  .photo-item:hover .overlay_photo {
+    transform: translateY(0); 
+    
+  }
+  
+  .photo-item:hover img {
+    opacity: 0.6; /* Faded image */
+  }
+  
+
+  .photo-item:hover{
+ cursor: pointer;
+ /* border: 3px solid red; */
+  }
+  
+
+  .overlay_photo{
+
+    color: aliceblue;
+    /* border: 2px solid red; */
+    z-index: 1000;
+  }
+
+

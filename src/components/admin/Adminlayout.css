@@ -1,0 +1,164 @@
+
+/* .admin-layout {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  min-height: 100vh;
+}
+
+.top-navbar {
+  background: linear-gradient(90deg, #424242, #424242);
+  padding: 1.5rem 6rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.top-navbar nav ul li {
+  position: relative;
+}
+
+.top-navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.top-navbar nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #0575e6, #d4145a);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+  border-radius: 2px;
+}
+
+.top-navbar nav ul li a:hover::before,
+.top-navbar nav ul li.active a::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #1e1e1e;
+  color: #fff;
+}
+ */
+
+
+ .admin-layout {
+  display: flex;
+  flex-direction: column;
+  
+  min-height: 100vh;
+}
+
+.top-navbar {
+  
+  padding: 1.5rem 6rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: whitesmoke;
+  color: red;
+}
+
+.top-navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.top-navbar nav ul li {
+  position: relative;
+}
+
+.top-navbar nav ul li a {
+ 
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+
+.top-navbar nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #0575e6, #d4145a);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+  border-radius: 2px;
+}
+
+
+.top-navbar nav ul li a:hover::before,
+.top-navbar nav ul li a.active::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #d4145a;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #0575e6;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+
+   background:#ececec;
+  color: #fcf9f9;
+}
+

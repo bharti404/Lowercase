@@ -1,0 +1,397 @@
+/* AlbumUpload.css */
+
+
+.album-upload-container{
+  display: flex;
+  height: auto;
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-top: 10px;
+  overflow: auto;
+}
+.album-upload {
+   width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+   box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
+    background-color: #fff;
+  }
+
+  .album-heading{
+    color: #474646;
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 3px;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+  }
+  .dropbox-button{    
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:11px;
+    background-color: white;
+    border: 1px solid rgb(141, 138, 138);
+    border-radius: 5px;
+    margin-bottom: 8px;
+
+
+  }
+  .dropbox-icon{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+
+  .album-form{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+  }
+  .form-group label {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 1px;
+  }
+
+  .form-group input {
+  width: 100%;                 /* make it expand full width */
+  padding: 10px 14px;          /* more balanced padding */
+  background-color: #fff;
+  border: 1px solid #ccc;      /* lighter neutral border */
+  border-radius: 6px;          /* smoother corners */
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.25s ease;  /* smooth hover/focus animations */
+  outline: none;               /* remove default browser outline */
+}
+  .abumupaod_head{
+
+    margin: 10px auto 50px auto;
+  }
+  
+  .album-upload h2 {
+    text-align: center;
+  }
+  
+  .album_form_two_items{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .album-upload label {
+    display: block;
+
+  }
+
+  .album_form_two_items label{
+
+
+    width: 45%;
+  }
+  
+  .album-upload input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .dropzone {
+    margin: 10px 0;
+    padding: 20px;
+    border: 2px dashed #007bff;
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .dropzone p {
+    margin: 0;
+  }
+  
+  
+
+  .upload_albumbtn{
+
+    padding: 10px;
+    margin: 10px 00;
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+
+  }
+
+
+  .upload_albumbtn:hover{
+
+cursor: pointer;
+    background-color: #3994f5;
+
+
+  }
+
+
+  .dropboxpictures_container{
+
+    margin: 50px auto;
+    background-color: #e5e5e5;
+    padding: 5px 10px;
+    width: 40%;
+    border-radius: 5px;
+  }
+
+
+  .dropboxpictures_container_items{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+
+  }
+
+  .dropboxpictures_container_item{
+
+    width: 20%;
+  }
+
+
+  .dropboxpictures_container_item_pic{
+
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .selecteddropbox_head{
+
+    font-weight: 700;
+    margin: 10px 00;
+
+  }
+
+
+
+
+
+
+
+
+  /* for button now */
+
+   /* .fetch-button{
+    display: block;
+    
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+
+
+  } */
+
+  .fetch-button {
+    grid-row-start: 5;
+   
+    grid-column-start: 1;
+    grid-column-end:-1 ;
+
+  background: linear-gradient(90deg, #3279c0, #184674);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* .album-form{
+  display: flex;
+  flex-direction: column;
+ 
+} */
+
+
+ 
+  
+  .fetch-button span{
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+  }
+  
+  /* .fetch-button:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, #D4145A, #000);
+    transition: all .35s;
+
+  } */
+  
+  .fetch-button:hover{
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .fetch-button:hover:after{
+    width: 100%;
+  }
+
+
+  .mrgnbtm-2{
+    margin-bottom: 20px;
+  }
+
+
+  /* .album-upload input[type="date"] {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px dashed;
+    border-image-source: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(212,20,90,1) 100%);
+    border-image-slice: 1;
+    margin: 10px 0 20px 0;
+    padding: 8px;
+    overflow: hidden;
+  } */
+
+  .custom-date-input {
+
+    cursor: text;
+  }
+  
+  /* Change cursor to pointer when hovering over the calendar icon (Webkit-based browsers like Chrome/Safari) */
+  .custom-date-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
+
+  /* .album-upload input[type="file"] {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px dashed;
+    border-image-source: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(212,20,90,1) 100%);
+    border-image-slice: 1;
+    margin: 10px 0 20px 0;
+    padding: 8px;
+    overflow: hidden;
+  } */
+  
+  /* input::file-selector-button {
+    background: linear-gradient(135deg, rgba(212,20,90,1) 0%, rgba(0,0,0,1) 100%);
+
+    background-position-x: 0%;
+    background-size: 200%;
+ 
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    padding: 1rem 1.25rem;
+    text-shadow: 0 1px 1px #333;
+    transition: all 0.25s;
+  } */
+
+
+  .form-group input::file-selector-button {
+  background: linear-gradient(135deg, #d4145a 0%, #0575e6 100%);
+  background-size: 200%;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0.75rem 1.5rem;
+  margin-right: 12px;
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  grid-row-start: 4;
+  
+
+}
+.cover-photo{
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+}
+
+.form-group input::file-selector-button:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+  input::file-selector-button:hover {
+    background-position-x: 100%;
+    transform: scale(1.1);
+  }
+
+  .form-group input::file-selector-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+  label{
+   
+    display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 0.3px;
+  }
+
+
+
+  
+.dropboxpictures_container {
+  display: hidden;
+  background-color: #e5e5e5;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+  overflow-y: auto; 
+
+        
+}
+
+
+.visable{
+display: none;
+}

@@ -1,0 +1,57 @@
+
+
+.artistProfile{
+    margin-top: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-profiles-container {
+  max-width: 100%;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+    align-items: center;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.dropdown-button {
+  width: 50%;
+  padding: 10px ;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.artist-names {
+padding: auto;
+width: 50%;
+margin: 0 auto;            /* Center the block itself */
+text-align: justify;        /* Center the text inside */
+font-size: 16px;
+line-height: 1.5;
+font-weight: 600;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.artist-names p {
+  margin-bottom: 10px;
+}
+

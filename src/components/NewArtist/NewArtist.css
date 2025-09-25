@@ -1,0 +1,246 @@
+/* 
+
+
+.artistProfile {
+  margin-top: 50px;
+  padding: 0 20px;
+ 
+ grid-column-gap: 17px;
+    grid-row-gap: 64px;
+    grid-template-rows: auto auto;
+    grid-template-columns: minmax(266px, 1fr) minmax(266px, 1fr) minmax(266px, 1fr) minmax(266px, 1fr);
+    grid-auto-columns: 1fr;
+    display: grid
+;
+}
+
+
+.artist-profiles-container {
+  max-width: 100%;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  align-items: center;
+     font-family: 'Degular', sans-serif;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.dropdown-button {
+  width: 50%;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.artist-names {
+  padding: auto;
+  width: 50%;
+  margin: 0 auto; 
+  text-align: justify; 
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.artist-names p {
+  margin-bottom: 10px;
+}
+
+
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  color: white;
+  padding: 40px 0;
+;
+  margin-top: 200px;
+}
+
+.heading {
+  position: relative;
+  z-index: 2;  
+  margin-left: 53px; 
+  background-color: yellow;
+  display: inline;
+  padding: 5px;
+  border-radius: 8px;
+         
+  
+  font-size: 48px;
+}
+
+.marquee {
+  position: absolute;
+  top: 50%;            
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  z-index: 1;          
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;   
+  animation: scroll 10s linear infinite;
+}
+
+.marquee-content span {
+  margin-right: 50px;  
+  font-size: 24px;
+}
+
+.marquee-heading{
+  text-align: center;
+  font-weight: 900;
+  line-height: 38px;
+    font-family: 'Degular';
+  font-size: 35px;
+
+ 
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
+.artistProfile {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* always 4 columns */
+  row-gap: 40px;
+  column-gap: 20px;
+
+  max-width: 1400px; /* controls total grid width */
+  margin: 50px auto; /* centers the grid */
+  padding: 0 40px; /* left & right spacing */
+}
+
+
+.artist-profiles-container {
+  max-width: 100%;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  align-items: center;
+  border: 1px solid red !important;
+  font-family: "Degular", sans-serif;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.dropdown-button {
+  width: 50%;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.artist-names {
+  padding: auto;
+  width: 50%;
+  margin: 0 auto; /* Center the block itself */
+  text-align: justify; /* Center the text inside */
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.artist-names p {
+  margin-bottom: 10px;
+}
+
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  color: white;
+  padding: 40px 0;
+  margin-top: 200px;
+}
+
+.heading {
+  position: relative;
+  z-index: 2;
+  margin-left: 53px;
+  background-color: yellow;
+  display: inline;
+  padding: 5px;
+  border-radius: 8px;
+
+  font-size: 48px;
+}
+
+.marquee {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 10s linear infinite;
+}
+
+.marquee-content span {
+  margin-right: 50px;
+  font-size: 24px;
+}
+
+.marquee-heading {
+  text-align: center;
+  font-weight: 900;
+  line-height: 38px;
+  font-family: "Degular";
+  font-size: 35px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

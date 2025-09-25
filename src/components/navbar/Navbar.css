@@ -1,0 +1,50 @@
+
+.navbar {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; 
+    background-color: rgba(0, 0, 0, 0); 
+    
+}
+
+.navbar-logo {
+
+    cursor: pointer;
+    margin-left: 30px;
+    
+}
+
+.navbar-logo img{
+    width: 10vw;
+}
+
+.navbar-bar {
+    width: 50%;
+    display: flex;
+    
+    justify-content: space-around;
+   
+
+    margin: 00 00 00 00;
+    
+}
+
+.navbar-items {
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.navbar-items:hover {
+    color: #ffcc00; /* Optional hover effect */
+}

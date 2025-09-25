@@ -1,0 +1,44 @@
+/* .fatsoma_tkt_widget{
+
+
+} */
+
+.tkt_events_wdgts_top{
+    width: 95vw;
+    margin: 00 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.tkt_event_wdgt_btn{
+
+    /* color: #fff; */
+    padding: 10px;
+    font-size: 48px;
+    font-weight: 800;
+    background-color: yellow;
+    display: inline;
+    border-radius: 5px;
+
+}
+
+.fatsoma_tkt_wgt_main{
+
+    /* border: 2px solid rgb(0, 255, 136); */
+    max-width: 95vw;
+    margin: 20px auto;
+  
+
+    
+}
+
+.tkt_events_wdgts_top_right{
+    margin: 20px 00;
+}
+.tkt_events_wdgts_top_right  span{
+    color: yellow !important;
+    font-size: 48px !important;
+  }
+  

@@ -1,0 +1,84 @@
+
+
+.breadcrumb_top{
+
+    margin-top: 40vh;
+ 
+}
+
+.breadcribm_txt{
+
+    color: #fff;
+    max-width: 90vw;
+    margin: 25px auto;
+     font-size: 25px;
+     margin-bottom: 25px;
+    
+    font-family: 'Degular', sans-serif;
+    
+}
+
+.breadcribm_txt span{
+    margin-right: 18px;
+
+}
+
+
+.artist_detail_sect,
+.artist_detail_vdo {
+  max-width: 90vw;   /* both will take same width */
+  margin: 25px auto; /* center horizontally */
+}
+
+.artist_detail_sect{
+
+    display: flex;
+    align-items: stretch;
+    justify-content:space-between ;
+    width: 100%;
+    gap:20px;
+    margin-bottom: 50px;
+    
+    
+}
+
+.artist_detail_sect_pic,
+.artist_detail_sect_cont {
+  width: 50%;   /* <— make both equal */
+}
+
+.artist_detail_sect_pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+
+
+.artist_detail_sect_cont p{
+
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+     font-family: 'Degular', sans-serif;
+   
+    
+}
+
+/* 
+.artist_detail_sect_cont{
+
+ 
+} */
+
+.artist_detail_vdo{
+
+    width: 90vw;
+    margin: 25px auto;
+   
+}
+
+
+

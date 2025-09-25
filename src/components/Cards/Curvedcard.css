@@ -1,0 +1,103 @@
+/* .card_album_section {
+  display: grid;
+ 
+   grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  row-gap: 35px;
+  padding-top: 15px;
+  
+}
+
+.compact-card {
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+}
+
+.compact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+@media (max-width: 900px) {
+  .card_album_section {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .card_album_section {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card_album_section {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+  
+  .compact-card {
+    width: auto !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+} */
+
+
+
+.card_album_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* wider cards */
+ row-gap: 40px; /* equal spacing between rows & cols */
+  padding: 40px; /* space on left & right */
+  column-gap: 20px;
+
+  
+}
+
+.compact-card {
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden;
+
+}
+
+.compact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .card_album_section {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card_album_section {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card_album_section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .compact-card {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}

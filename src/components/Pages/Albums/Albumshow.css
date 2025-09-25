@@ -1,0 +1,24 @@
+
+
+.album_show_headerpic img{
+
+width: 100%;
+height: 80vh;
+object-fit: cover;
+}
+
+.album_show_headerpic{
+
+    margin:00 00 20px 00;
+
+}
+
+.albumshow_year_text{
+
+    width: 100%;
+    /* height: 18vh; */
+    color: #fff;
+    font-size: 80px;
+    font-weight: bold;
+    padding-left: 70px;
+}
