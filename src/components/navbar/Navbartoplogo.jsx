@@ -21,7 +21,7 @@ const Navbartoplogo = () => {
           EVENTS
         </Link>
         <Link to="/photos" className="navbar-items">
-          PHOTOS ALBUMS
+          PHOTOS 
         </Link>
         <Link to="/artist" className="navbar-items">
           ARTISTS

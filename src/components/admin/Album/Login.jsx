@@ -61,6 +61,7 @@ import { useState } from "react";
 import "./Login.css";
 import cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
 
 //  const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -69,8 +70,9 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
 
-   const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -84,11 +86,15 @@ const Login = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     try {
-      const response = await fetch(`https://lowercase-backend.onrender.com/api/admin/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      setLoading(true);
+      const response = await fetch(
+        `https://lowercase-backend.onrender.com/api/admin/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       if (!response.ok) {
         const errorData = await response.json();
         alert("Login Failed" + (errorData.message || "Something want Wrong"));
@@ -105,6 +111,8 @@ const Login = () => {
       }
     } catch (err) {
       alert("something want wrong" + err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -158,7 +166,14 @@ const Login = () => {
 
           <div className="button-row">
             <button type="submit" className="signbtn">
-              Sign In
+              {loading ? (
+                <>
+                  <CircularProgress size={16} sx={{ color: "#fff" }} />
+                  <span style={{ padding: "2px" }}>Sign up...</span>{" "}
+                </>
+              ) : (
+                "sign up"
+              )}
             </button>
           </div>
         </form>

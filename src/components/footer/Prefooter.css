@@ -6,13 +6,16 @@
     align-items: center;
     justify-content: space-between;
 
-    margin: 100px auto;
+   max-width: 90vw;   
+  margin: 100px auto;
 
 }
 
+
+
 .prefooter_main_left, .prefooter_main_right{
 
-    width: 45vw;
+   
     /* border: 1px solid red; */
     text-align: center;
 

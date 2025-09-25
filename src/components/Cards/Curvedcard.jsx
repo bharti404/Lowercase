@@ -233,7 +233,8 @@ const Curvedcard = ({ Albums, refetch }) => {
                   {album.title}
                 </Typography>
 
-                <Box sx={{ display: "flex", gap: 1, ml: 1 }}>
+                {
+                  role === "superadmin" ?(<Box sx={{ display: "flex", gap: 1, ml: 1 }}>
                   <TbEdit
                     style={{
                       fontSize: "22px",
@@ -257,7 +258,34 @@ const Curvedcard = ({ Albums, refetch }) => {
                       handleDelete(album);
                     }}
                   />
-                </Box>
+                </Box>) : ""
+                }
+
+                {/* <Box sx={{ display: "flex", gap: 1, ml: 1 }}>
+                  <TbEdit
+                    style={{
+                      fontSize: "22px",
+                      color: "#2075ca",
+                      cursor: "pointer",
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEdit(album);
+                    }}
+                  />
+
+                  <TbTrash
+                    style={{
+                      fontSize: "22px",
+                      color: "#d32f2f",
+                      cursor: "pointer",
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(album);
+                    }}
+                  />
+                </Box> */}
               </Box>
 
               <Box
@@ -271,7 +299,7 @@ const Curvedcard = ({ Albums, refetch }) => {
                 <Typography variant="caption" sx={{ fontWeight: "bold" }}>
                   Date:
                 </Typography>
-                <Typography variant="caption">{album.date}</Typography>
+                <Typography variant="caption">{new Date(album.date).toLocaleDateString()}</Typography>
 
                 <Typography variant="caption" sx={{ fontWeight: "bold" }}>
                   Club:

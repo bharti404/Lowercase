@@ -898,6 +898,7 @@ export default function PhotoWall() {
   const minHeight = 80;
   const maxHeight = 110;
 
+  console.log("is loadind", isLoading)
   // Create auto rotation function with useCallback to maintain reference
   const createAutoRotate = useCallback(() => {
     if (autoRotationRef.current) autoRotationRef.current.kill();
@@ -938,7 +939,9 @@ export default function PhotoWall() {
         const response = await axios.get(
           `${BaseUrl}/api/album/get/6733c1b1df07ccf2838503d7`
         );
+        console.log(response.data?.data.photo)
         setImageList(response.data?.data.photos || []);
+
       } catch (err) {
         console.error("Error fetching images:", err);
         setIsLoading(false);
