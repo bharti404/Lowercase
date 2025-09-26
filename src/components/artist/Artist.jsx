@@ -101,6 +101,7 @@ import Artiststylescards from '../homepage/Artiststylescards';
 import Navbartoplogo from "../navbar/Navbartoplogo";
 import Footer from "../footer/Footer";
 import Prefooter from "../footer/Prefooter";
+import NewArtist from '../NewArtist/NewArtist';
 
 const ArtistNames = [
  `DRAKE, A BOOGIE WIT THA HOODIE, GUNNA, KELHANI, PARTYNEXTDOOR, 6LACK, BRYSON TILLER, LIL TJAY,DON TOLIVER, AND TORY LANEZ, D BLOCK EUROPE, M HUNCHO, NAFE SMALLZ, `,
@@ -120,6 +121,8 @@ const Artist =()=>{
    
     <div className="artistProfile">
          <Artiststylescards/>
+        
+
     </div>
     
     <div className="artist-profiles-container">

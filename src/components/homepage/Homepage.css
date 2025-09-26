@@ -64,7 +64,7 @@ body{
     /* border: 1px solid whitesmoke;  to be may be implemnted */
     position: absolute;
     color: #fff;
-    font-family: Helvetica;
+   font-family:   "SF Pro";
     width: 80vw;
 }
 
@@ -114,7 +114,8 @@ margin-bottom: 20px;
 .vdohome_contentone, .vdohome_contenttwo{
 font-size: 14px;
 margin-bottom: 15px;
-font-weight: 700;
+font-weight: 400;
+font-family:   "SF Pro";
 
 }
 

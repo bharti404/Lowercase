@@ -1,6 +1,8 @@
 import React from "react";
 import "./Artistshome.css";
 import Artiststylescards from "./Artiststylescards";
+import artistData from "../../data/ArtistData";
+import NewArtiststylescards from "./NewArtiststylescards";
 
 const ArtistName = "DRAKE, A BOOGIE WIT THA HOODIE, GUNNA, KELHANI, PARTYNEXTDOOR, 6LACK, BRYSON TILLER, LIL TJAY, DON TOLIVER, AND TORY LANEZ, D BLOCK EUROPE, M HUNCHO, NAFE SMALLZ, WEWANTWRAITHS, SKEPTA, RUSS MILLIONS, TION WAYNE, AITCH, AJ TRACEY, KREPT & KONAN, DIGDAT, ABRA CADABRA, ARRDEE, NSG, MOSTACK, STEFFLON DON, ZIEZIE, B YOUNG, NOT3S, YOUNG T & BUGSEY, WSTRN, MISS DYNAMITE, MAJESTIC, S CLUB, DAPPY, YUNGEN, DEVILMAN, BIG NARSTIE, WILEY, LETHAL BIZZLE, JAY1, CEE CHYNA, GLIZZ, M DOT R, NINO UPTOWN, SWITCH OTR, RAMZ, SWARMZ, KOOMZ, SUB FOCUS, PENDULUM, SIGMA, DJ FRESH, WILKINSON, S.P.Y ...";
 
@@ -34,7 +36,8 @@ const Artists = () => {
         </div>
 
         <div className="artist_cards_container">
-          <Artiststylescards />
+
+          <Artiststylescards  layout="grid"  />
         </div>
 
       

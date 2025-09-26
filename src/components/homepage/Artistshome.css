@@ -2,10 +2,10 @@
 .home_artists_section {
   position: relative;
   width: 100%;
-  margin:100px 0px 50px 0px ;
+  margin:80px 0px 50px 0px ;
   padding: 40px 20px ;
   background-color: transparent;
-  font-family: Helvetica, sans-serif;
+  font-family:   "SF Pro";
   overflow: hidden; /* Hide overflow for marquee */
 }
 
@@ -94,7 +94,7 @@
 .home_artist_name_items{
   font-size: 54px;
   position: relative;
-  bottom: 100px;
+  bottom: 50px;
   background-color: yellow;
   display: inline-block;
   padding: 10px 10px 0px 10px;
@@ -124,4 +124,9 @@
   background-color: yellow;
     padding: 5px 10px 5px 10px ;
 
+}
+.artist_cards_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

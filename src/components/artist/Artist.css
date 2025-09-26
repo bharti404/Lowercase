@@ -14,7 +14,7 @@
   max-width: 100%;
   margin: 50px auto 50px auto;
   padding: 20px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family:   "SF Pro";
   background-color: white;
   border: 1px solid black;
   text-align: center;
@@ -36,7 +36,7 @@ h2 {
   border: none;
   cursor: pointer;
   margin-bottom: 10px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ font-family:   "SF Pro";
 }
 
 .artist-names {
@@ -47,7 +47,7 @@ text-align: justify;        /* Center the text inside */
 font-size: 16px;
 line-height: 1.5;
 font-weight: 600;
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-family:   "SF Pro";
 }
 
 
