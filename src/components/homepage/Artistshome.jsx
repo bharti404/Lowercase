@@ -42,7 +42,7 @@ const Artists = () => {
      
     </div>
      <div className="bottom_row">
-        <div className="left_text">LOWERCASE LIVE</div>
+        <div className="left_text">FOLLOW US ON INSTAGRAM</div>
         <button className="full_lineup_button">VIEW THE FULL LINE UP</button>
       </div>
       </>
